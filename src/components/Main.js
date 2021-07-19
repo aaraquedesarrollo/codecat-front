@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
-import { Formularios } from "./Formularios";
+import { FormularioLogin } from "./FormularioLogin";
+import { FormularioRegistro } from "./FormularioRegistro";
 
 export const Main = (props) => {
   const { logeando, registrando, toggleLogeando, toggleRegistrando } = props;
@@ -43,12 +44,11 @@ export const Main = (props) => {
           </div>
         </div>
       </div>
-      <Formularios
-        logeando={logeando}
-        registrando={registrando}
-        toggleRegistrando={toggleRegistrando}
-        toggleLogeando={toggleLogeando}
-      />
+
+      {logeando && <FormularioLogin toggleLogeando={toggleLogeando} />}
+      {registrando && (
+        <FormularioRegistro toggleRegistrando={toggleRegistrando} />
+      )}
     </main>
   );
 };
