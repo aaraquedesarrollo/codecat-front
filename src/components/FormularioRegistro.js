@@ -10,6 +10,15 @@ export const FormularioRegistro = (props) => {
   const [error, setError] = useState("");
 
   const [datos, setDatos] = useState({});
+  const manejadorErroresRegistro = (error) => {
+    if (error.mensaje.includes("username")) {
+      return "El nombre de usuario ya existe";
+    } else if (error.mensaje.includes("email")) {
+      return "El email usado ya existe";
+    } else {
+      return `No se ha podido crear el usuario: ${error.mensaje}`;
+    }
+  };
   const agregarDatos = (e) => {
     setDatos({
       ...datos,
@@ -44,7 +53,7 @@ export const FormularioRegistro = (props) => {
         setVerificar(true);
       } catch (e) {
         setCargando(false);
-        setError("Ha habido un error, " + e.mensaje);
+        setError(manejadorErroresRegistro(e));
       }
     } else if (repeatPassword !== datos.password && repeatPassword !== "") {
       setError("Las contraseñas no coinciden");
