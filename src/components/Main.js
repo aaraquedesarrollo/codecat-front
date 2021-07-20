@@ -11,7 +11,7 @@ export const Main = (props) => {
     >
       <div className="col-6">
         <img
-          src="src"
+          src="/img/codecat-prueba.png"
           alt="Dibujo de un gato en píxel art"
           width="400"
           height="500"
@@ -21,7 +21,7 @@ export const Main = (props) => {
         <div className="contenedor-logo row">
           <img
             className="col-12"
-            src="src"
+            src="/img/logo-prueba.png"
             alt="Logo de CodeCat"
             width="400"
             height="400"

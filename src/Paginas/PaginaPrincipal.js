@@ -23,15 +23,17 @@ export const PaginaPrincipal = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="contenedor-body container-fluid">
         <Cabecera />
-        <Main
-          logeando={logeando}
-          registrando={registrando}
-          toggleLogeando={toggleLogeando}
-          toggleRegistrando={toggleRegistrando}
-        />
-        <About />
+        <div className="contenido-total container">
+          <Main
+            logeando={logeando}
+            registrando={registrando}
+            toggleLogeando={toggleLogeando}
+            toggleRegistrando={toggleRegistrando}
+          />
+          <About />
+        </div>
         <Footer />
       </div>
     </>
