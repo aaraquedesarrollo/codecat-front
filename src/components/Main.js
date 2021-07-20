@@ -6,10 +6,10 @@ export const Main = (props) => {
   const { logeando, registrando, toggleLogeando, toggleRegistrando } = props;
   return (
     <main
-      className="contenido-principal row py-3 justify-content-center"
+      className="contenido-principal row pb-3 justify-content-center"
       id="principal"
     >
-      <div className="col-6 mt-5">
+      <div className="col-6">
         <img
           src="/img/codecat-prueba.png"
           alt="Dibujo de un gato en píxel art"
@@ -17,7 +17,7 @@ export const Main = (props) => {
           height="500"
         />
       </div>
-      <div className="col-6 mt-5">
+      <div className="col-6">
         <div className="contenedor-logo row">
           <img
             className="col-12"
@@ -26,16 +26,16 @@ export const Main = (props) => {
             width="400"
             height="400"
           />
-          <div className="contenedor-botones col-12 mt-3 d-flex justify-content-around">
+          <div className="contenedor-botones col-12 d-flex justify-content-around">
             <button
-              className="boton-principal btn btn-dark"
+              className="boton-principal btn btn-secondary"
               type="button"
               onClick={toggleLogeando}
             >
               Login
             </button>
             <button
-              className="boton-principal btn btn-dark"
+              className="boton-principal btn btn-secondary"
               type="button"
               onClick={toggleRegistrando}
             >

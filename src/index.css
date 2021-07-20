@@ -41,6 +41,7 @@
 }
 
 .contenido-principal {
+  padding-top: 85px;
   position: relative;
 }
 
@@ -50,11 +51,33 @@
   border: 0;
 }
 
+.fondo-login {
+  background-color: hsla(0, 0%, 13%, 0.7);
+}
+
 .login-form,
 .registro-form {
   background-color: var(--color-formulario);
   position: absolute;
   z-index: 1;
+  border-radius: 10px;
+  top: 100px;
+  padding: 30px;
+  padding-bottom: 20px;
+  box-shadow: 0 0 50px 2000px hsla(0, 0%, 13%, 0.7);
+  font-size: 20px;
+}
+
+.boton-formulario {
+  padding: 10px 30px;
+}
+
+.mensaje {
+  padding-top: 25px;
+  padding-bottom: 0;
+  text-align: center;
+  color: rgb(192, 15, 15);
+  font-weight: bold;
 }
 
 .contenedor-secundario {
