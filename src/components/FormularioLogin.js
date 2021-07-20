@@ -36,6 +36,27 @@ export const FormularioLogin = (props) => {
         loguearUsuario();
         setCargando(false);
         setError("");
+        const responseHistorial = await fetch(
+          urlApi + "historial/comprobar-historial",
+          {
+            headers: {
+              Authorization: "Bearer " + respuesta.token,
+            },
+          }
+        );
+        const existeHistorial = await responseHistorial.json();
+        if (!existeHistorial) {
+          const responseCrearHistorial = await fetch(
+            urlApi + "historial/crear-historial",
+            {
+              method: "POST",
+              headers: {
+                Authorization: "Bearer " + respuesta.token,
+              },
+            }
+          );
+          // const crearHistorial = await responseCrearHistorial.json();
+        }
       } catch (e) {
         setCargando(false);
         setError(e.mensaje);
