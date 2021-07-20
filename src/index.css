@@ -1,7 +1,12 @@
 :root {
   --color-primario: #9bd8eb;
-  --color-secundario: #5c9eb3;
+  --color-secundario: hsl(194, 36%, 53%);
   --color-formulario: #388096;
+}
+
+.contenedor-body {
+  background-image: url(./wallpaperPrinicpal.png);
+  background-attachment: fixed;
 }
 
 .navegador {
@@ -17,8 +22,12 @@
   font-size: 1.5rem;
 }
 
+.contenido-total {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
 .contenido-principal {
-  background-color: var(--color-primario);
   position: relative;
 }
 
