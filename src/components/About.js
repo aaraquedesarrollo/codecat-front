@@ -1,8 +1,8 @@
 export const About = () => {
   return (
-    <aside className="contenedor-secundario row">
+    <aside className="contenedor-secundario row p-3">
       <article className="col-12" id="about">
-        <h2 className="text-center">Sobre CodeCat</h2>
+        <h2 className="titulo-about text-center my-3">Sobre CodeCat</h2>
         <p>
           CodeCat es un proyecto que nace de la idea de 4 jóvenes en el proyecto
           final de un bootcamp de programación.

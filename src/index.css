@@ -1,12 +1,23 @@
 :root {
-  --color-primario: #9bd8eb;
-  --color-secundario: hsl(194, 36%, 53%);
+  --color-primario: hsla(194, 67%, 76%, 0.9);
+  --color-secundario: hsl(194, 53%, 49%);
   --color-formulario: #388096;
+}
+
+.cabecera {
+  border-bottom: 3px solid #0b3b49;
 }
 
 .contenedor-body {
   background-image: url(./wallpaperPrinicpal.png);
   background-attachment: fixed;
+}
+
+.titulo {
+  font-family: "Press Start 2P";
+  color: #151515;
+  font-size: 25px;
+  margin-bottom: 0;
 }
 
 .navegador {
@@ -18,7 +29,9 @@
 }
 
 .navegador a {
-  color: black;
+  font-weight: bold;
+  font-size: 25px;
+  color: #151515;
   font-size: 1.5rem;
 }
 
@@ -33,6 +46,8 @@
 
 .boton-principal {
   width: 45%;
+  background-color: var(--color-formulario);
+  border: 0;
 }
 
 .login-form,
@@ -44,6 +59,13 @@
 
 .contenedor-secundario {
   background-color: var(--color-primario);
+  border-radius: 10px;
+}
+
+.titulo-about {
+  font-family: "Press Start 2P";
+  font-size: 20px;
+  color: #222;
 }
 
 .footer {
