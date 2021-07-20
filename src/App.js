@@ -8,12 +8,14 @@ import { AuthContextProvider } from "./context/AuthContextProvider";
 import { CodeCat } from "./Paginas/CodeCat";
 import { PaginaNotFound } from "./Paginas/PaginaNotFound";
 import { PaginaPrincipal } from "./Paginas/PaginaPrincipal";
+import { Loading } from "./components/Loading/Loading";
 
 function App() {
   return (
     <>
       <Router>
         <AuthContextProvider>
+          <Loading />
           <Switch>
             <Route path="/principal" exact>
               <PaginaPrincipal />
