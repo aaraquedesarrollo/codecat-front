@@ -66,10 +66,10 @@ export const FormularioRegistro = (props) => {
 
   return (
     <>
-      <form className="registro-form col-6 py-3" onSubmit={registrarse}>
+      <form className="registro-form col-6" onSubmit={registrarse}>
         {!verificar && (
           <>
-            <h3>Registro</h3>
+            <h3 className="text-center mb-3">Registro</h3>
             <div className="form-group">
               <label htmlFor="nombre">Nombre</label>
               <input
@@ -120,21 +120,31 @@ export const FormularioRegistro = (props) => {
                 placeholder="Contraseña"
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              Registrar
-            </button>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={toggleRegistrando}
-            >
-              Cancelar
-            </button>
+            <div className="d-flex justify-content-around">
+              <button
+                type="submit"
+                className="boton-formulario btn btn-primary"
+              >
+                Registrar
+              </button>
+              <button
+                type="button"
+                className="boton-formulario btn btn-secondary"
+                onClick={toggleRegistrando}
+              >
+                Cancelar
+              </button>
+            </div>
           </>
         )}
-        {verificar &&
-          "Verifica tu cuenta accediendo al correo que te ha llegado al email"}
-        {error !== "" && error}
+
+        {verificar && (
+          <p className="mensaje text-success">
+            "Verifica tu cuenta accediendo al correo que te ha llegado al email"
+          </p>
+        )}
+
+        {error !== "" && <p className="mensaje">{error}</p>}
       </form>
     </>
   );

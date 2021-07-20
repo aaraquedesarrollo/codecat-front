@@ -48,8 +48,8 @@ export const FormularioLogin = (props) => {
 
   return (
     <>
-      <form className="login-form col-6 py-3" onSubmit={loguearse}>
-        <h3>Login</h3>
+      <form className="login-form col-6" onSubmit={loguearse}>
+        <h3 className="text-center mb-3">Login</h3>
         <div className="form-group">
           <label htmlFor="username">Nombre de Usuario o Email</label>
           <input
@@ -70,17 +70,19 @@ export const FormularioLogin = (props) => {
             onChange={agregarDatos}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Login
-        </button>
-        <button
-          type="button"
-          className="btn btn-secondary"
-          onClick={toggleLogeando}
-        >
-          Cancelar
-        </button>
-        {error !== "" && error}
+        <div className="d-flex justify-content-around">
+          <button type="submit" className="boton-formulario btn btn-primary">
+            Login
+          </button>
+          <button
+            type="button"
+            className="boton-formulario btn btn-secondary"
+            onClick={toggleLogeando}
+          >
+            Cancelar
+          </button>
+        </div>
+        {error !== "" && <p className="mensaje">{error}</p>}
       </form>
     </>
   );
