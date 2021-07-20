@@ -69,15 +69,12 @@ body {
 }
 .contenedor-loading {
   display: flex;
+  z-index: 2000;
   justify-content: center;
   align-items: center;
   background-color: rgba(204, 202, 202, 0.61);
-  margin: 0;
-  height: 100vh;
   position: absolute;
   width: 100vw;
-  left: 0;
   top: 0;
   bottom: 0;
-  right: 0;
 }

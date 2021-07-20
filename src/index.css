@@ -11,6 +11,7 @@
 .contenedor-body {
   background-image: url(./wallpaperPrinicpal.png);
   background-attachment: fixed;
+  position: relative;
 }
 
 .titulo {
