@@ -66,7 +66,10 @@ export const FormularioRegistro = (props) => {
 
   return (
     <>
-      <form className="registro-form col-6" onSubmit={registrarse}>
+      <form
+        className={`registro-form ${verificar ? "fijar-centro" : ""} col-6`}
+        onSubmit={registrarse}
+      >
         {!verificar && (
           <>
             <h3 className="text-center mb-3">Registro</h3>
@@ -140,9 +143,8 @@ export const FormularioRegistro = (props) => {
 
         {verificar && (
           <div>
-            <p className="mensaje text-success">
-              "Verifica tu cuenta accediendo al correo que te ha llegado al
-              email"
+            <p className="mensaje text-light">
+              Verifica tu cuenta accediendo al correo que te ha llegado al email
             </p>
             <div className="d-flex justify-content-around">
               <button
