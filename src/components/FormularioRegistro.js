@@ -15,7 +15,7 @@ export const FormularioRegistro = (props) => {
       return "El nombre de usuario ya existe";
     } else if (error.mensaje.includes("email")) {
       return "El email usado ya existe";
-    } else if (error.mensaje.includes("segura")) {
+    } else if (error.mensaje.includes("incorrecta")) {
       return `La contraseña debe contener minimo 9 caracteres: numeros, simbolos, letras y almenos una en mayuscula`;
     } else {
       return `No se ha podido crear el usuario: ${error.mensaje}`;
