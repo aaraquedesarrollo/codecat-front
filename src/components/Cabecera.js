@@ -12,6 +12,9 @@ export const Cabecera = () => {
               <li>
                 <a href="#about">Sobre CodeCat</a>
               </li>
+              <li>
+                <a href="#contacto">Contacto</a>
+              </li>
             </ul>
           </div>
         </div>
