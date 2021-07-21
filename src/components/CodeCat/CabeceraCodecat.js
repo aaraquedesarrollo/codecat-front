@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export const CabeceraCodecat = () => {
   return (
-    <header className="cabecera row fixed-top">
+    <header className="cabecera row">
       <nav className="navegador col-12 py-3">
         <div className="container">
           <div className="row">

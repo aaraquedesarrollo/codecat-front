@@ -1,3 +1,7 @@
 export const Habitacion = () => {
-  return <section className="habitacion col-9"></section>;
+  return (
+    <section className="col-9">
+      <div className="habitacion"></div>
+    </section>
+  );
 };
