@@ -111,13 +111,56 @@
 }
 
 .codecat-principal {
-  min-height: 100vh;
-  max-height: 100vh;
-  min-width: 100%;
-  max-width: 100%;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  min-height: calc(100vh - 77px);
+  background-color: var(--color-primario);
+  justify-content: center;
+}
+
+.habitacion {
+  background-image: url(./habitacion.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.seccion-menu {
+  align-self: center;
+  height: 400px;
+  display: flex;
 }
 
 .menu {
-  min-height: 50%;
+  background-color: var(--color-formulario);
+  width: 90%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.info-cat {
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: var(--color-primario);
+  border-radius: 10px;
+}
+
+.lista-info {
+  margin-bottom: 0;
+}
+
+.boton-menu {
+  padding: 20px 0;
+}
+
+@media (min-width: 992px) {
+  .seccion-menu {
+    height: 500px;
+  }
 }
