@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import { useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 export const FormularioLogin = (props) => {
@@ -15,54 +15,57 @@ export const FormularioLogin = (props) => {
     });
   };
 
-  const loguearse = async (e) => {
-    e.preventDefault();
-    setCargando(true);
-    if (datos.password !== "" && datos.username !== "") {
-      try {
-        const response = await fetch(urlApi + "usuarios/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(datos),
-        });
-        const respuesta = await response.json();
-        console.log(respuesta);
-        if (respuesta.error) {
-          throw respuesta;
-        }
-        localStorage.setItem("token", respuesta.token);
-        loguearUsuario();
-        setCargando(false);
-        setError("");
-        const responseHistorial = await fetch(
-          urlApi + "historial/comprobar-historial",
-          {
-            headers: {
-              Authorization: "Bearer " + respuesta.token,
-            },
-          }
-        );
-        const existeHistorial = await responseHistorial.json();
-        if (!existeHistorial) {
-          await fetch(urlApi + "historial/crear-historial", {
+  const loguearse = useCallback(
+    async (e) => {
+      e.preventDefault();
+      setCargando(true);
+      if (datos.password !== "" && datos.username !== "") {
+        try {
+          const response = await fetch(urlApi + "usuarios/login", {
             method: "POST",
             headers: {
-              Authorization: "Bearer " + respuesta.token,
+              "Content-Type": "application/json",
             },
+            body: JSON.stringify(datos),
           });
-          // const crearHistorial = await responseCrearHistorial.json();
+          const respuesta = await response.json();
+          console.log(respuesta);
+          if (respuesta.error) {
+            throw respuesta;
+          }
+          localStorage.setItem("token", respuesta.token);
+          loguearUsuario();
+          setCargando(false);
+          setError("");
+          const responseHistorial = await fetch(
+            urlApi + "historial/comprobar-historial",
+            {
+              headers: {
+                Authorization: "Bearer " + respuesta.token,
+              },
+            }
+          );
+          const existeHistorial = await responseHistorial.json();
+          if (!existeHistorial) {
+            await fetch(urlApi + "historial/crear-historial", {
+              method: "POST",
+              headers: {
+                Authorization: "Bearer " + respuesta.token,
+              },
+            });
+            // const crearHistorial = await responseCrearHistorial.json();
+          }
+        } catch (e) {
+          setCargando(false);
+          setError(e.mensaje);
         }
-      } catch (e) {
+      } else {
         setCargando(false);
-        setError(e.mensaje);
+        setError("Faltan credenciales para iniciar sesion");
       }
-    } else {
-      setCargando(false);
-      setError("Faltan credenciales para iniciar sesion");
-    }
-  };
+    },
+    [datos, loguearUsuario, setCargando, urlApi]
+  );
 
   return (
     <>
