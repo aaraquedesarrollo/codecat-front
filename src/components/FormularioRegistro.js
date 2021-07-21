@@ -139,9 +139,21 @@ export const FormularioRegistro = (props) => {
         )}
 
         {verificar && (
-          <p className="mensaje text-success">
-            "Verifica tu cuenta accediendo al correo que te ha llegado al email"
-          </p>
+          <div>
+            <p className="mensaje text-success">
+              "Verifica tu cuenta accediendo al correo que te ha llegado al
+              email"
+            </p>
+            <div className="d-flex justify-content-around">
+              <button
+                type="button"
+                className="boton-formulario btn btn-secondary"
+                onClick={toggleRegistrando}
+              >
+                Volver
+              </button>
+            </div>
+          </div>
         )}
 
         {error !== "" && <p className="mensaje">{error}</p>}
