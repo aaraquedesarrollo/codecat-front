@@ -29,6 +29,15 @@
   margin-bottom: 0;
 }
 
+.listado-navegacion a {
+  transition: 200ms all;
+}
+
+.listado-navegacion a:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .navegador a {
   font-weight: bold;
   font-size: 25px;
@@ -86,10 +95,12 @@
   border-radius: 10px;
 }
 
-.titulo-about {
+.titulo-aside {
   font-family: "Press Start 2P";
   font-size: 20px;
   color: #222;
+  text-align: center;
+  margin: 25px 0;
 }
 
 .footer {
