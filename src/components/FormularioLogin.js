@@ -46,15 +46,12 @@ export const FormularioLogin = (props) => {
         );
         const existeHistorial = await responseHistorial.json();
         if (!existeHistorial) {
-          const responseCrearHistorial = await fetch(
-            urlApi + "historial/crear-historial",
-            {
-              method: "POST",
-              headers: {
-                Authorization: "Bearer " + respuesta.token,
-              },
-            }
-          );
+          await fetch(urlApi + "historial/crear-historial", {
+            method: "POST",
+            headers: {
+              Authorization: "Bearer " + respuesta.token,
+            },
+          });
           // const crearHistorial = await responseCrearHistorial.json();
         }
       } catch (e) {

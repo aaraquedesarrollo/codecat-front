@@ -24,55 +24,65 @@ export const About = () => {
         </p>
         <ul className="list-unstyled text-center">
           <li className="persona-listado">
-            <li>Albert Araque</li>
-            <li>
-              Email:{" "}
-              <a href="mailto: aaraquedesarrollo@gmail.com">
-                aaraquedesarrollo@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/albert-araque-casaus/">
-                LinkedIn
-              </a>
-            </li>
+            <ul className="list-unstyled">
+              <li>Albert Araque</li>
+              <li>
+                Email:{" "}
+                <a href="mailto: aaraquedesarrollo@gmail.com">
+                  aaraquedesarrollo@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/albert-araque-casaus/">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
           </li>
           <li className="persona-listado">
-            <li>Sandra Cuéllar</li>
-            <li>
-              Email:{" "}
-              <a href="mailto: sandra.cllp.22@gmail.com">
-                sandra.cllp.22@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/sandracuellar/">LinkedIn</a>
-            </li>
+            <ul className="list-unstyled">
+              <li>Sandra Cuéllar</li>
+              <li>
+                Email:{" "}
+                <a href="mailto: sandra.cllp.22@gmail.com">
+                  sandra.cllp.22@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/sandracuellar/">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
           </li>
           <li className="persona-listado">
-            <li>Raúl Navarro</li>
-            <li>
-              Email:{" "}
-              <a href="mailto: raul.navarro.uribe@gmail.com">
-                raul.navarro.uribe@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/raul-navarro-uribe/">
-                LinkedIn
-              </a>
-            </li>
+            <ul className="list-unstyled">
+              <li>Raúl Navarro</li>
+              <li>
+                Email:{" "}
+                <a href="mailto: raul.navarro.uribe@gmail.com">
+                  raul.navarro.uribe@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/raul-navarro-uribe/">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
           </li>
           <li className="persona-listado">
-            <li>Jose María Zamora</li>
-            <li>
-              Email: <a href="mailto: jzamora@biada.net">jzamora@biada.net</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/jose-maria-zamora/">
-                LinkedIn
-              </a>
-            </li>
+            <ul className="list-unstyled">
+              <li>Jose María Zamora</li>
+              <li>
+                Email: <a href="mailto: jzamora@biada.net">jzamora@biada.net</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/jose-maria-zamora/">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </article>
