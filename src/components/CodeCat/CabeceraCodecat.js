@@ -9,20 +9,16 @@ export const CabeceraCodecat = () => {
             <h1 className="titulo col-4 text-center">CodeCat</h1>
             <ul className="listado-navegacion col-8 list-unstyled d-flex justify-content-around align-items-center">
               <li>
-                <NavLink to="/principal">
-                  <a href="#principal">Principal</a>
-                </NavLink>
+                <NavLink to="/principal">Principal</NavLink>
               </li>
               <li>
                 <NavLink to="/principal">
-                  <a href="#contacto">
-                    Huir
-                    <img
-                      src="/img/emergency-exit.png"
-                      alt="Salida de emergencia"
-                      height="40"
-                    />
-                  </a>
+                  Huir
+                  <img
+                    src="/img/emergency-exit.png"
+                    alt="Salida de emergencia"
+                    height="40"
+                  />
                 </NavLink>
               </li>
             </ul>
