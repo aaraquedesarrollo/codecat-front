@@ -109,3 +109,15 @@
 .fijar-centro {
   position: fixed;
 }
+
+.codecat-principal {
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.menu {
+  min-height: 50%;
+  background-color: var(--color-primario);
+}
