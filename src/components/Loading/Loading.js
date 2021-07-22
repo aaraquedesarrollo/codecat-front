@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { GeneralContext } from "../../context/GeneralContext";
 import "./Loading.css";
 
 export const Loading = () => {
-  const { cargando } = useContext(AuthContext);
+  const { cargando } = useContext(GeneralContext);
 
   return (
     cargando && (
