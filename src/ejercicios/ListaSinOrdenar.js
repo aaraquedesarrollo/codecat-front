@@ -40,8 +40,10 @@ export const ListaSinOrdenar = (props) => {
       setAcierto(false);
     }
   }, [
+    conseguirExperiencia,
     datosEjercicio._id,
     datosEjercicio.objetivos,
+    datosEjercicio.recompensa.experiencia,
     idTrabajo,
     input1,
     input2,
