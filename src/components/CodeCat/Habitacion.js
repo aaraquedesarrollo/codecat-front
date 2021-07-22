@@ -1,6 +1,8 @@
+import { PropTypes } from "prop-types";
 import { Ejercicio } from "./Ejercicio";
 
-export const Habitacion = () => {
+export const Habitacion = (props) => {
+  const { abrirEjercicios } = props;
   const ejercicios = [
     { numero: 1, nombre: "header", nivelRequerido: "1", tema: "html" },
     { numero: 2, nombre: "main", nivelRequerido: "2", tema: "html" },
@@ -12,14 +14,20 @@ export const Habitacion = () => {
   return (
     <section className="col-9">
       <div className="habitacion row">
-        <section className="ventana-ejercicios col-12">
-          <ul className="listado-ejercicios list-unstyled row">
-            {ejercicios.map((ejercicio) => (
-              <Ejercicio key={ejercicio.numero} ejercicio={ejercicio} />
-            ))}
-          </ul>
-        </section>
+        {abrirEjercicios && (
+          <section className="ventana-ejercicios col-12">
+            <ul className="listado-ejercicios list-unstyled row">
+              {ejercicios.map((ejercicio) => (
+                <Ejercicio key={ejercicio.numero} ejercicio={ejercicio} />
+              ))}
+            </ul>
+          </section>
+        )}
       </div>
     </section>
   );
+};
+
+Habitacion.propTypes = {
+  abrirEjercicios: PropTypes.bool.isRequired,
 };
