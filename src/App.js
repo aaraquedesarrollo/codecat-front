@@ -18,6 +18,7 @@ function App() {
     <>
       <Router>
         <AuthContextProvider>
+<<<<<<< HEAD
           <GeneralContextProvider>
             <EjerciciosContextProvider>
               <Loading />
@@ -40,6 +41,28 @@ function App() {
               </Switch>
             </EjerciciosContextProvider>
           </GeneralContextProvider>
+=======
+          <EjerciciosContextProvider>
+            <Loading />
+            <Switch>
+              <Route path="/principal" exact>
+                <PaginaPrincipal />
+              </Route>
+              <Route path="/codecat" exact>
+                <CodeCat />
+              </Route>
+              <Route path="/" exact>
+                <Redirect to="/principal" />
+              </Route>
+              <Route path="/codecat/ejercicios/:idTrabajo" exact>
+                <Tarea />
+              </Route>
+              <Route path="**" exact>
+                <PaginaNotFound />
+              </Route>
+            </Switch>
+          </EjerciciosContextProvider>
+>>>>>>> feature/datos-usuario-ejercicios
         </AuthContextProvider>
       </Router>
     </>

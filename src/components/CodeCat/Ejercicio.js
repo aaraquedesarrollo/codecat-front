@@ -1,13 +1,45 @@
+import { useContext } from "react";
+import { useCallback } from "react";
+import { useHistory } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+
 export const Ejercicio = (props) => {
   const { ejercicio } = props;
+  const { token, urlApi } = useContext(AuthContext);
+
+  const history = useHistory();
+
+  const anyadirTrabajoHistorial = useCallback(
+    async (idTrabajo) => {
+      const response = await fetch(
+        urlApi + "historial/anyadir-trabajo/" + idTrabajo,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      await response.json();
+    },
+    [token, urlApi]
+  );
+
+  const irEjercicios = async (id) => {
+    history.push("codecat/ejercicios/" + id);
+    await anyadirTrabajoHistorial(id);
+  };
   return (
     <>
-      <li className="elemento-ejercicios col-3">
+      <li
+        className="elemento-ejercicios col-3"
+        onClick={() => irEjercicios(ejercicio._id)}
+      >
         <div className="ejercicio">
           <ul className="list-unstyled">
-            <li>Ejercicio: {ejercicio.nombre}</li>
-            <li>Tema: {ejercicio.tema}</li>
-            <li>Nivel Requerido: {ejercicio.nivelRequerido}</li>
+            <li>Formación: {ejercicio.nombre}</li>
+            <li>Tema: HTML</li>
+            <li>Nivel Requerido: {ejercicio.formacion_minima}</li>
           </ul>
         </div>
       </li>
