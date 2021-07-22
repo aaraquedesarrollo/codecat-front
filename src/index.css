@@ -2,6 +2,7 @@
   --color-primario: hsla(194, 67%, 76%, 0.9);
   --color-secundario: hsl(194, 53%, 49%);
   --color-formulario: #388096;
+  --sombra-cajas: 5px 5px 8px #222;
 }
 
 .cabecera {
@@ -56,7 +57,7 @@
 }
 
 .contenedor-botones {
-  margin-top: 50px;
+  margin-top: 35px;
 }
 
 .boton-principal {
@@ -119,7 +120,7 @@
 }
 
 .codecat-principal {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 30px;
   min-height: calc(100vh - 77px);
   background-color: var(--color-primario);
@@ -148,6 +149,7 @@
   flex-direction: column;
   justify-content: space-around;
   border-radius: 10px;
+  box-shadow: var(--sombra-cajas);
 }
 
 .info-cat {
@@ -157,6 +159,8 @@
   align-items: center;
   background-color: var(--color-primario);
   border-radius: 10px;
+  font-size: 10px;
+  box-shadow: 3px 3px 3px #084757;
 }
 
 .lista-info {
@@ -165,10 +169,41 @@
 
 .boton-menu {
   padding: 20px 0;
+  box-shadow: 3px 3px 3px #084757;
+}
+
+.ventana-ejercicios {
+  display: flex;
+  align-items: center;
+}
+
+.listado-ejercicios {
+  background-color: #c1712a;
+  border: 2px solid #222;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: var(--sombra-cajas);
+}
+
+.elemento-ejercicios {
+  padding: 10px;
+}
+
+.ejercicio {
+  padding: 15px;
+  background-color: #f4c97d;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #744900;
 }
 
 @media (min-width: 992px) {
+  .codecat-principal {
+    padding-top: 50px;
+  }
   .seccion-menu {
     height: 500px;
+  }
+  .info-cat {
+    font-size: 15px;
   }
 }
