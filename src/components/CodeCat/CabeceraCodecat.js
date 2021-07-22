@@ -10,10 +10,7 @@ export const CabeceraCodecat = () => {
         <div className="container">
           <div className="row">
             <h1 className="titulo col-4 text-center">CodeCat</h1>
-            <ul className="listado-navegacion col-8 list-unstyled d-flex justify-content-around align-items-center">
-              <li>
-                <NavLink to="/principal">Principal</NavLink>
-              </li>
+            <ul className="listado-navegacion col-8 list-unstyled d-flex justify-content-end align-items-center">
               <li>
                 <NavLink to="/principal" onClick={desloguearUsuario}>
                   Huir
