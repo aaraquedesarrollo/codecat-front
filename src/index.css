@@ -119,7 +119,7 @@
 }
 
 .codecat-principal {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 30px;
   min-height: calc(100vh - 77px);
   background-color: var(--color-primario);
@@ -157,6 +157,7 @@
   align-items: center;
   background-color: var(--color-primario);
   border-radius: 10px;
+  font-size: 10px;
 }
 
 .lista-info {
@@ -168,7 +169,13 @@
 }
 
 @media (min-width: 992px) {
+  .codecat-principal {
+    padding-top: 50px;
+  }
   .seccion-menu {
     height: 500px;
+  }
+  .info-cat {
+    font-size: 15px;
   }
 }
