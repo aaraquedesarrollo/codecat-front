@@ -1,4 +1,7 @@
-export const MenuLateral = () => {
+import { PropTypes } from "prop-types";
+
+export const MenuLateral = (props) => {
+  const { toggleAbrirEjercicios } = props;
   return (
     <section className="seccion-menu col-3">
       <div className="menu">
@@ -16,7 +19,11 @@ export const MenuLateral = () => {
             <li>Ilimitadas</li>
           </ul>
         </div>
-        <button className="boton-menu btn btn-light" type="button">
+        <button
+          className="boton-menu btn btn-light"
+          type="button"
+          onClick={toggleAbrirEjercicios}
+        >
           Formación
         </button>
         <button className="boton-menu btn btn-light" type="button">
@@ -28,4 +35,8 @@ export const MenuLateral = () => {
       </div>
     </section>
   );
+};
+
+MenuLateral.propTypes = {
+  toggleAbrirEjercicios: PropTypes.func.isRequired,
 };
