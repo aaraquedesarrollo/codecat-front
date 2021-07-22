@@ -55,6 +55,10 @@
   position: relative;
 }
 
+.contenedor-botones {
+  margin-top: 50px;
+}
+
 .boton-principal {
   width: 45%;
   background-color: var(--color-formulario);
@@ -100,6 +104,10 @@
   color: #222;
   text-align: center;
   margin: 25px 0;
+}
+
+.persona-listado {
+  margin-bottom: 30px;
 }
 
 .footer {

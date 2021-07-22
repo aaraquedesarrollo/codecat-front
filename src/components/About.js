@@ -86,14 +86,14 @@ export const About = () => {
           </li>
         </ul>
       </article>
-      <section className="contacto col-12" id="contacto">
+      <section className="contacto col-12 d-flex flex-column" id="contacto">
         <h2 className="titulo-aside">Contacto</h2>
         <p>
           Si quieres contactar con nosotros con motivo del videojuego, ya sea
           para sugerencias, reportar errores u otros, puedes contactarnos por
           correo:
         </p>
-        <span>
+        <span className="align-self-center">
           <a href="mailto: codecat.productions@gmail.com">
             codecat.productions@gmail.com
           </a>
