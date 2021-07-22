@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 export const CabeceraCodecat = () => {
+  const { desloguearUsuario } = useContext(AuthContext);
   return (
     <header className="cabecera row">
       <nav className="navegador col-12 py-3">
@@ -12,7 +15,7 @@ export const CabeceraCodecat = () => {
                 <NavLink to="/principal">Principal</NavLink>
               </li>
               <li>
-                <NavLink to="/principal">
+                <NavLink to="/principal" onClick={desloguearUsuario}>
                   Huir
                   <img
                     src="/img/emergency-exit.png"
