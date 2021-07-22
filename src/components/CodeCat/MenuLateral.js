@@ -1,5 +1,4 @@
 import { PropTypes } from "prop-types";
-
 import { useContext } from "react";
 import { useState } from "react";
 import { useCallback } from "react";
@@ -7,10 +6,12 @@ import { useEffect } from "react";
 import { ProgressBar } from "react-bootstrap";
 import { AuthContext } from "../../context/AuthContext";
 import { EjerciciosContext } from "../../context/EjerciciosContext";
+import { GeneralContext } from "../../context/GeneralContext";
 
 export const MenuLateral = (props) => {
   const { toggleAbrirEjercicios } = props;
-  const { token, urlApi } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
+  const { urlApi } = useContext(GeneralContext);
   const { setDatosFormaciones } = useContext(EjerciciosContext);
   const [datosUsuario, setDatosUsuario] = useState([]);
   const obtenerDatosUsuario = useCallback(async () => {
@@ -88,7 +89,11 @@ export const MenuLateral = (props) => {
                   : 100
               }
             />
-            <button className="boton-menu btn btn-light" type="button">
+            <button
+              className="boton-menu btn btn-light"
+              type="button"
+              onClick={toggleAbrirEjercicios}
+            >
               Formación
             </button>
             <button className="boton-menu btn btn-light" type="button">

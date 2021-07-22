@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { GeneralContext } from "../../context/GeneralContext";
 
 export const Ejercicio = (props) => {
   const { ejercicio } = props;
-  const { token, urlApi } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
+  const { urlApi } = useContext(GeneralContext);
 
   const history = useHistory();
 
