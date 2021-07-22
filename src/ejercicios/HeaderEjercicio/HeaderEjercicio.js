@@ -3,9 +3,11 @@ import { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import "./HeaderEjercicio.css";
 import { Col } from "react-bootstrap";
+import { GeneralContext } from "../../context/GeneralContext";
 export const HeaderEjercicio = (props) => {
   const { datosEjercicio, idTrabajo } = props;
-  const { urlApi, token } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
+  const { urlApi } = useContext(GeneralContext);
   const [input1, setInput1] = useState("");
   const [acierto, setAcierto] = useState(false);
   const [texto, setTexto] = useState("");

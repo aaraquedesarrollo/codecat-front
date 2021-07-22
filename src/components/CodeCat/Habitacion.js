@@ -1,12 +1,10 @@
 import { PropTypes } from "prop-types";
-import { useCallback } from "react";
 import { useContext } from "react";
-import { useHistory } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
 import { EjerciciosContext } from "../../context/EjerciciosContext";
 import { Ejercicio } from "./Ejercicio";
 
 export const Habitacion = (props) => {
+  const { abrirEjercicios } = props;
   /* const ejercicios = [
     { numero: 1, nombre: "header", formacion_minima: "1", tema: "html" },
     { numero: 2, nombre: "main", formacion_minima: "2", tema: "html" },
@@ -21,11 +19,13 @@ export const Habitacion = (props) => {
     <section className="col-9">
       <div className="habitacion row">
         <section className="ventana-ejercicios col-12">
-          <ul className="listado-ejercicios list-unstyled row">
-            {datosFormaciones.map((ejercicio) => (
-              <Ejercicio key={ejercicio._id} ejercicio={ejercicio} />
-            ))}
-          </ul>
+          {abrirEjercicios && (
+            <ul className="listado-ejercicios list-unstyled row">
+              {datosFormaciones.map((ejercicio) => (
+                <Ejercicio key={ejercicio._id} ejercicio={ejercicio} />
+              ))}
+            </ul>
+          )}
         </section>
       </div>
     </section>
