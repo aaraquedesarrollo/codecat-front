@@ -8,7 +8,7 @@ import { ProgressBar } from "react-bootstrap";
 import { AuthContext } from "../../context/AuthContext";
 import { EjerciciosContext } from "../../context/EjerciciosContext";
 
-export const MenuLateral = () => {
+export const MenuLateral = (props) => {
   const { toggleAbrirEjercicios } = props;
   const { token, urlApi } = useContext(AuthContext);
   const { setDatosFormaciones } = useContext(EjerciciosContext);

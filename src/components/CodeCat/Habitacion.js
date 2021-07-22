@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { useCallback } from "react";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
@@ -5,7 +6,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { EjerciciosContext } from "../../context/EjerciciosContext";
 import { Ejercicio } from "./Ejercicio";
 
-export const Habitacion = () => {
+export const Habitacion = (props) => {
   /* const ejercicios = [
     { numero: 1, nombre: "header", formacion_minima: "1", tema: "html" },
     { numero: 2, nombre: "main", formacion_minima: "2", tema: "html" },
