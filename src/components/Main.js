@@ -13,8 +13,8 @@ export const Main = (props) => {
         <img
           src="/img/codecat-prueba.png"
           alt="Dibujo de un gato en píxel art"
-          width="400"
-          height="500"
+          width="450"
+          height="501"
         />
       </div>
       <div className="col-6">
@@ -23,8 +23,8 @@ export const Main = (props) => {
             className="col-12"
             src="/img/logo-prueba.png"
             alt="Logo de CodeCat"
-            width="400"
-            height="400"
+            width="403"
+            height="351"
           />
           <div className="contenedor-botones col-12 d-flex justify-content-around">
             <button
