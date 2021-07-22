@@ -9,8 +9,6 @@ export const AuthContextProvider = (props) => {
   const token = localStorage.getItem("token");
   const [logueado, setLogueado] = useState(!!token);
   const history = useHistory();
-  const urlApi = process.env.REACT_APP_URL_API;
-  const [cargando, setCargando] = useState(false);
   useEffect(() => {
     if (!token) {
       history.push("/principal");
@@ -18,7 +16,8 @@ export const AuthContextProvider = (props) => {
       history.push("/codecat");
     }
   }, [history, token]);
-  const loguearUsuario = () => {
+  const loguearUsuario = (token) => {
+    localStorage.setItem("token", token);
     setLogueado(true);
     history.push("/codecat");
   };
@@ -33,9 +32,6 @@ export const AuthContextProvider = (props) => {
         token,
         desloguearUsuario,
         loguearUsuario,
-        setCargando,
-        urlApi,
-        cargando,
       }}
     >
       {children}

@@ -1,10 +1,10 @@
 import { PropTypes } from "prop-types";
 import { useContext, useState } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { GeneralContext } from "../context/GeneralContext";
 
 export const FormularioRegistro = (props) => {
   const { toggleRegistrando } = props;
-  const { urlApi, setCargando } = useContext(AuthContext);
+  const { urlApi, setCargando } = useContext(GeneralContext);
   const [repeatPassword, setRepeatPassword] = useState("");
   const [verificar, setVerificar] = useState(false);
   const [error, setError] = useState("");
