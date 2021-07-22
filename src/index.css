@@ -212,6 +212,12 @@
   border-radius: 10px;
 }
 
+.icono {
+  font-size: 40px;
+  color: black;
+  cursor: pointer;
+}
+
 @media (min-width: 992px) {
   .codecat-principal {
     padding-top: 50px;
