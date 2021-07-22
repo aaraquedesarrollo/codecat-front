@@ -4,8 +4,10 @@ import { AuthContext } from "../../context/AuthContext";
 import "./HeaderEjercicio.css";
 import { Col } from "react-bootstrap";
 import { GeneralContext } from "../../context/GeneralContext";
+import { EjerciciosContext } from "../../context/EjerciciosContext";
 export const HeaderEjercicio = (props) => {
   const { datosEjercicio, idTrabajo } = props;
+  const { conseguirExperiencia } = useContext(EjerciciosContext);
   const { token } = useContext(AuthContext);
   const { urlApi } = useContext(GeneralContext);
   const [input1, setInput1] = useState("");
@@ -15,22 +17,24 @@ export const HeaderEjercicio = (props) => {
   const comprobarEjercicio = useCallback(async () => {
     if (input1 === datosEjercicio.objetivos[0]) {
       setAcierto(true);
-      const response = await fetch(
+      await fetch(
         `${urlApi}historial/anyadir-tarea/${idTrabajo}/${datosEjercicio._id}`,
         {
           method: "PUT",
           headers: { Authorization: "Bearer " + token },
         }
       );
-      await response.json();
+      await conseguirExperiencia(datosEjercicio.recompensa.experiencia);
       setTexto("");
     } else {
       setTexto("Este header no es tan chulo!!");
       setAcierto(false);
     }
   }, [
+    conseguirExperiencia,
     datosEjercicio._id,
     datosEjercicio.objetivos,
+    datosEjercicio.recompensa.experiencia,
     idTrabajo,
     input1,
     token,

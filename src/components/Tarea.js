@@ -20,6 +20,7 @@ export const Tarea = () => {
       history.push("/codecat");
     }
   }, [ejercicios, history]);
+
   const paginaAnterior = () => {
     if (index === 0) {
       setIndex(ejercicios.tareas.length - 1);
@@ -27,6 +28,7 @@ export const Tarea = () => {
     }
     setIndex(index - 1);
   };
+
   const paginaSiguiente = () => {
     if (index === ejercicios.tareas.length - 1) {
       setIndex(0);
@@ -34,10 +36,12 @@ export const Tarea = () => {
     }
     setIndex(index + 1);
   };
+
   useEffect(
     () => setDatosEjercicio(ejercicios.tareas[index]),
     [ejercicios.tareas, index]
   );
+
   return (
     <Row className="ejercicio">
       <Col onClick={paginaAnterior} xs="2">
