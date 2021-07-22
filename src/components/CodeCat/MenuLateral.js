@@ -11,9 +11,8 @@ import { GeneralContext } from "../../context/GeneralContext";
 export const MenuLateral = (props) => {
   const { toggleAbrirEjercicios } = props;
   const { token } = useContext(AuthContext);
-  const { urlApi } = useContext(GeneralContext);
+  const { urlApi, datosUsuario, setDatosUsuario } = useContext(GeneralContext);
   const { setDatosFormaciones } = useContext(EjerciciosContext);
-  const [datosUsuario, setDatosUsuario] = useState([]);
   const obtenerDatosUsuario = useCallback(async () => {
     try {
       const response = await fetch(urlApi + "codecat/cargar-informacion", {
@@ -27,7 +26,7 @@ export const MenuLateral = (props) => {
     } catch (error) {
       console.log(error);
     }
-  }, [setDatosFormaciones, token, urlApi]);
+  }, [setDatosFormaciones, setDatosUsuario, token, urlApi]);
   useEffect(() => obtenerDatosUsuario(), [obtenerDatosUsuario]);
 
   return (

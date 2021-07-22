@@ -191,10 +191,25 @@
 }
 
 .ejercicio {
+  position: relative !important;
   padding: 15px;
   background-color: #f4c97d;
   border-radius: 10px;
   box-shadow: 3px 3px 3px #744900;
+}
+.bloqueado {
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000087;
+  border-radius: 10px;
 }
 
 @media (min-width: 992px) {

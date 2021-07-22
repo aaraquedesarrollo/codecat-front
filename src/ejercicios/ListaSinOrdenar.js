@@ -4,10 +4,13 @@ import { AuthContext } from "../context/AuthContext";
 import "./HeaderEjercicio/HeaderEjercicio.css";
 import { Col } from "react-bootstrap";
 import { GeneralContext } from "../context/GeneralContext";
+import { EjerciciosContext } from "../context/EjerciciosContext";
 export const ListaSinOrdenar = (props) => {
   const { datosEjercicio, idTrabajo } = props;
   const { token } = useContext(AuthContext);
   const { urlApi } = useContext(GeneralContext);
+  const { conseguirExperiencia } = useContext(EjerciciosContext);
+
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
   const [input3, setInput3] = useState("");
@@ -30,6 +33,7 @@ export const ListaSinOrdenar = (props) => {
         }
       );
       await response.json();
+      await conseguirExperiencia(datosEjercicio.recompensa.experiencia);
       setTexto("");
     } else {
       setTexto("Esta lista no es para fliparlo");

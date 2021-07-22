@@ -3,11 +3,12 @@ import { useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { GeneralContext } from "../../context/GeneralContext";
+import { FcLock } from "react-icons/fc";
 
 export const Ejercicio = (props) => {
   const { ejercicio } = props;
   const { token } = useContext(AuthContext);
-  const { urlApi } = useContext(GeneralContext);
+  const { urlApi, datosUsuario } = useContext(GeneralContext);
 
   const history = useHistory();
 
@@ -28,6 +29,9 @@ export const Ejercicio = (props) => {
   );
 
   const irEjercicios = async (id) => {
+    if (datosUsuario.nivelUsuario.experiencia < ejercicio.formacion_minima) {
+      return;
+    }
     history.push("codecat/ejercicios/" + id);
     await anyadirTrabajoHistorial(id);
   };
@@ -43,6 +47,12 @@ export const Ejercicio = (props) => {
             <li>Tema: HTML</li>
             <li>Nivel Requerido: {ejercicio.formacion_minima}</li>
           </ul>
+          {datosUsuario.nivelUsuario.experiencia <
+            ejercicio.formacion_minima && (
+            <div className="bloqueado">
+              <FcLock />
+            </div>
+          )}
         </div>
       </li>
     </>
