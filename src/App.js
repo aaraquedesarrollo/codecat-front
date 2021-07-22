@@ -29,7 +29,7 @@ function App() {
               <Route path="/" exact>
                 <Redirect to="/principal" />
               </Route>
-              <Route path="/ejercicios/:idTrabajo" exact>
+              <Route path="/codecat/ejercicios/:idTrabajo" exact>
                 <Tarea />
               </Route>
               <Route path="**" exact>

@@ -53,7 +53,6 @@ export const FormularioLogin = (props) => {
                 Authorization: "Bearer " + respuesta.token,
               },
             });
-            // const crearHistorial = await responseCrearHistorial.json();
           }
         } catch (e) {
           setCargando(false);
