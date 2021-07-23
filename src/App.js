@@ -8,7 +8,7 @@ import { AuthContextProvider } from "./context/AuthContextProvider";
 import { CodeCat } from "./Paginas/CodeCat";
 import { PaginaNotFound } from "./Paginas/PaginaNotFound";
 import { PaginaPrincipal } from "./Paginas/PaginaPrincipal";
-import { Loading } from "./components/Loading/Loading";
+import { Loading } from "./components/Loading";
 import { GeneralContextProvider } from "./context/GeneralContextProvider";
 import { EjerciciosContextProvider } from "./context/EjerciciosContextProvider";
 import { Tarea } from "./components/Tarea";

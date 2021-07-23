@@ -1,6 +1,5 @@
 import { useContext } from "react";
-import { GeneralContext } from "../../context/GeneralContext";
-import "./Loading.css";
+import { GeneralContext } from "../context/GeneralContext";
 
 export const Loading = () => {
   const { cargando } = useContext(GeneralContext);

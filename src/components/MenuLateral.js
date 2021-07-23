@@ -3,13 +3,13 @@ import { useContext } from "react";
 import { useCallback } from "react";
 import { useEffect } from "react";
 import { ProgressBar } from "react-bootstrap";
-import { AuthContext } from "../../context/AuthContext";
-import { EjerciciosContext } from "../../context/EjerciciosContext";
-import { GeneralContext } from "../../context/GeneralContext";
+import { AuthContext } from "../context/AuthContext";
+import { EjerciciosContext } from "../context/EjerciciosContext";
+import { GeneralContext } from "../context/GeneralContext";
 
 export const MenuLateral = (props) => {
   const { toggleAbrirEjercicios } = props;
-  const { token } = useContext(AuthContext);
+  const { token, desloguearUsuario } = useContext(AuthContext);
   const { urlApi, datosUsuario, setDatosUsuario } = useContext(GeneralContext);
   const { setDatosFormaciones } = useContext(EjerciciosContext);
   const obtenerDatosUsuario = useCallback(async () => {
@@ -19,13 +19,18 @@ export const MenuLateral = (props) => {
           Authorization: "Bearer " + token,
         },
       });
+
       const usuario = await response.json();
+      if (usuario.mensaje.includes("caducado")) {
+        desloguearUsuario();
+        return;
+      }
       setDatosUsuario(usuario);
       setDatosFormaciones([...usuario.listadoFormaciones]);
     } catch (error) {
       console.log(error);
     }
-  }, [setDatosFormaciones, setDatosUsuario, token, urlApi]);
+  }, [desloguearUsuario, setDatosFormaciones, setDatosUsuario, token, urlApi]);
   useEffect(() => obtenerDatosUsuario(), [obtenerDatosUsuario]);
 
   return (

@@ -3,8 +3,8 @@ import { useContext, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
 import { EjerciciosContext } from "../context/EjerciciosContext";
-import { HeaderEjercicio } from "../ejercicios/HeaderEjercicio/HeaderEjercicio";
-import { ListaSinOrdenar } from "../ejercicios/ListaSinOrdenar";
+import { HeaderEjercicio } from "./ejercicios/HeaderEjercicio";
+import { ListaSinOrdenar } from "./ejercicios/ListaSinOrdenar";
 
 export const Tarea = () => {
   const { idTrabajo } = useParams();
