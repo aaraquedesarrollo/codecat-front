@@ -351,6 +351,23 @@
   bottom: 0;
 }
 
+.formulario-nombre-gato {
+  background-color: #c1712a;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.formulario-nombre-gato button {
+  background-color: #744900;
+  color: white;
+}
+
+.formulario-nombre-gato button:hover {
+  color: white;
+  border: 1px solid black;
+}
+
 @media (min-width: 992px) {
   .codecat-principal {
     padding-top: 50px;
