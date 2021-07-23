@@ -3,12 +3,10 @@ import { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Col } from "react-bootstrap";
 import { GeneralContext } from "../../context/GeneralContext";
-import { EjerciciosContext } from "../../context/EjerciciosContext";
 export const ListaSinOrdenar = (props) => {
   const { datosEjercicio, idTrabajo } = props;
   const { token } = useContext(AuthContext);
   const { urlApi } = useContext(GeneralContext);
-  const { conseguirExperiencia } = useContext(EjerciciosContext);
 
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
@@ -32,17 +30,14 @@ export const ListaSinOrdenar = (props) => {
         }
       );
       await response.json();
-      await conseguirExperiencia(datosEjercicio.recompensa.experiencia);
       setTexto("");
     } else {
       setTexto("Esta lista no es para fliparlo");
       setAcierto(false);
     }
   }, [
-    conseguirExperiencia,
     datosEjercicio._id,
     datosEjercicio.objetivos,
-    datosEjercicio.recompensa.experiencia,
     idTrabajo,
     input1,
     input2,
