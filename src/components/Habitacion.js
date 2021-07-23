@@ -46,7 +46,7 @@ export const Habitacion = (props) => {
 
   return (
     <section className="col-9">
-      <div className="habitacion row">
+      <div className={`${abrirPopUpGato ? "" : "habitacion "}row h-100`}>
         {abrirEjercicios && (
           <section className="ventana-ejercicios col-12">
             <ul className="listado-ejercicios list-unstyled row">
@@ -57,7 +57,7 @@ export const Habitacion = (props) => {
           </section>
         )}
         {abrirPopUpGato && (
-          <div className="ventana-ejercicios col-12">
+          <div className="ventana-ejercicios justify-content-center col-12">
             <div className="formulario-nombre-gato">
               <form noValidate={true} onSubmit={submitNombreGato}>
                 <div className="form-group">
