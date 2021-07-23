@@ -10,7 +10,7 @@ export const Ejercicio = (props) => {
   const history = useHistory();
 
   const irEjercicios = async (id) => {
-    if (datosUsuario.nivelUsuario.experiencia < ejercicio.formacion_minima) {
+    if (datosUsuario.nivelUsuario.nivel < ejercicio.nivel_minimo) {
       return;
     }
     history.push("codecat/ejercicios/" + id);
@@ -25,10 +25,9 @@ export const Ejercicio = (props) => {
           <ul className="list-unstyled">
             <li>Formación: {ejercicio.nombre}</li>
             <li>Tema: HTML</li>
-            <li>Nivel Requerido: {ejercicio.formacion_minima}</li>
+            <li>Nivel Requerido: {ejercicio.nivel_minimo}</li>
           </ul>
-          {datosUsuario.nivelUsuario.experiencia <
-            ejercicio.formacion_minima && (
+          {datosUsuario.nivelUsuario.nivel < ejercicio.nivel_minimo && (
             <div className="bloqueado">
               <FcLock />
             </div>
