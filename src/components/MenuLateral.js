@@ -57,55 +57,57 @@ export const MenuLateral = (props) => {
                 </li>
               </ul>
             </div>
-            <ProgressBar
-              className="progress p-0"
-              striped
-              animated
-              variant="info"
-              label={
-                isNaN(
-                  Math.floor(
-                    ((datosUsuario.usuario.experiencia -
-                      datosUsuario.nivelUsuario.experiencia) *
-                      100) /
-                      (datosUsuario.siguienteNivel.experiencia -
-                        datosUsuario.nivelUsuario.experiencia)
-                  )
-                )
-                  ? ""
-                  : Math.floor(
+            <div className="botones-menu col">
+              <ProgressBar
+                className="progress p-0"
+                striped
+                animated
+                variant="info"
+                label={
+                  isNaN(
+                    Math.floor(
                       ((datosUsuario.usuario.experiencia -
                         datosUsuario.nivelUsuario.experiencia) *
                         100) /
                         (datosUsuario.siguienteNivel.experiencia -
                           datosUsuario.nivelUsuario.experiencia)
-                    ) + "%"
-              }
-              now={
-                datosUsuario.siguienteNivel.experiencia !== "Max"
-                  ? datosUsuario.usuario.experiencia
-                  : 100
-              }
-              min={datosUsuario.nivelUsuario.experiencia}
-              max={
-                datosUsuario.siguienteNivel.experiencia !== "Max"
-                  ? datosUsuario.siguienteNivel.experiencia
-                  : 100
-              }
-            />
-            <button
-              className="boton-menu btn btn-light"
-              type="button"
-              onClick={toggleAbrirEjercicios}
-            >
-              Formación
-            </button>
-            <button className="boton-menu btn btn-light" type="button">
-              Trabajos
-            </button>
-            <button className="boton-menu btn btn-light" type="button">
-              Tienda
-            </button>
+                    )
+                  )
+                    ? ""
+                    : Math.floor(
+                        ((datosUsuario.usuario.experiencia -
+                          datosUsuario.nivelUsuario.experiencia) *
+                          100) /
+                          (datosUsuario.siguienteNivel.experiencia -
+                            datosUsuario.nivelUsuario.experiencia)
+                      ) + "%"
+                }
+                now={
+                  datosUsuario.siguienteNivel.experiencia !== "Max"
+                    ? datosUsuario.usuario.experiencia
+                    : 100
+                }
+                min={datosUsuario.nivelUsuario.experiencia}
+                max={
+                  datosUsuario.siguienteNivel.experiencia !== "Max"
+                    ? datosUsuario.siguienteNivel.experiencia
+                    : 100
+                }
+              />
+              <button
+                className="boton-menu btn btn-light"
+                type="button"
+                onClick={toggleAbrirEjercicios}
+              >
+                Formación
+              </button>
+              <button className="boton-menu btn btn-light" type="button">
+                Trabajos
+              </button>
+              <button className="boton-menu btn btn-light" type="button">
+                Tienda
+              </button>
+            </div>
           </div>
         </>
       )}
