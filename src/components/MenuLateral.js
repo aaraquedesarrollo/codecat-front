@@ -20,14 +20,14 @@ export const MenuLateral = (props) => {
         },
       });
 
-      const usuario = await response.json();
-      if (usuario.mensaje?.includes("caducado")) {
+      const datosCodeCat = await response.json();
+      if (datosCodeCat.mensaje?.includes("caducado")) {
         desloguearUsuario();
         return;
       }
-
-      setDatosUsuario(usuario);
-      setDatosFormaciones([...usuario.listadoFormaciones]);
+      const { usuario, siguienteNivel, nivelUsuario } = datosCodeCat;
+      setDatosUsuario({ usuario, siguienteNivel, nivelUsuario });
+      setDatosFormaciones([...datosCodeCat.listadoFormaciones]);
     } catch (error) {
       console.log(error);
     }

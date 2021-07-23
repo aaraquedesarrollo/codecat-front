@@ -3,10 +3,8 @@ import { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Col } from "react-bootstrap";
 import { GeneralContext } from "../../context/GeneralContext";
-import { EjerciciosContext } from "../../context/EjerciciosContext";
 export const HeaderEjercicio = (props) => {
   const { datosEjercicio, idTrabajo } = props;
-  const { conseguirExperiencia } = useContext(EjerciciosContext);
   const { token } = useContext(AuthContext);
   const { urlApi } = useContext(GeneralContext);
   const [input1, setInput1] = useState("");
@@ -23,17 +21,14 @@ export const HeaderEjercicio = (props) => {
           headers: { Authorization: "Bearer " + token },
         }
       );
-      await conseguirExperiencia(datosEjercicio.recompensa.experiencia);
       setTexto("");
     } else {
       setTexto("Este header no es tan chulo!!");
       setAcierto(false);
     }
   }, [
-    conseguirExperiencia,
     datosEjercicio._id,
     datosEjercicio.objetivos,
-    datosEjercicio.recompensa.experiencia,
     idTrabajo,
     input1,
     token,

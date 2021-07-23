@@ -1,39 +1,19 @@
 import { useContext } from "react";
-import { useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import { FcLock } from "react-icons/fc";
-import { AuthContext } from "../context/AuthContext";
 import { GeneralContext } from "../context/GeneralContext";
 
 export const Ejercicio = (props) => {
   const { ejercicio } = props;
-  const { token } = useContext(AuthContext);
-  const { urlApi, datosUsuario } = useContext(GeneralContext);
+  const { datosUsuario } = useContext(GeneralContext);
 
   const history = useHistory();
-
-  const anyadirTrabajoHistorial = useCallback(
-    async (idTrabajo) => {
-      const response = await fetch(
-        urlApi + "historial/anyadir-trabajo/" + idTrabajo,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        }
-      );
-      await response.json();
-    },
-    [token, urlApi]
-  );
 
   const irEjercicios = async (id) => {
     if (datosUsuario.nivelUsuario.experiencia < ejercicio.formacion_minima) {
       return;
     }
     history.push("codecat/ejercicios/" + id);
-    await anyadirTrabajoHistorial(id);
   };
   return (
     <>
