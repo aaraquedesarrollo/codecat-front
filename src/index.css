@@ -226,7 +226,7 @@
 }
 
 .bloqueado {
-  font-size: 50px;
+  font-size: 25px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -234,10 +234,13 @@
   right: 0;
   text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
   background-color: #00000087;
   border-radius: 10px;
+}
+.bloqueado svg {
+  margin: 5px;
 }
 
 .icono {

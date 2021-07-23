@@ -43,6 +43,21 @@ export const Tarea = () => {
     [ejercicios.tareas, index]
   );
 
+  // no devuelve lo que toca
+  /*  useEffect(() => {
+    return async () => {
+      const tareasHistorial = await obtenerTareasCompletadas(idTrabajo);
+      if (ejercicios.tareas === tareasHistorial) {
+        console.log("si");
+      }
+    };
+  }, [
+    datosEjercicio._id,
+    ejercicios.tareas,
+    idTrabajo,
+    obtenerTareasCompletadas,
+  ]); */
+
   return (
     <div className="contenedor-body container-fluid">
       <CabeceraCodecat />
