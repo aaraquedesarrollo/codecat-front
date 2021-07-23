@@ -54,7 +54,6 @@ export const Habitacion = (props) => {
                 <Ejercicio key={ejercicio._id} ejercicio={ejercicio} />
               ))}
             </ul>
-            )
           </section>
         )}
         {abrirPopUpGato && (
