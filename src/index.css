@@ -217,7 +217,14 @@
   background-color: #fed38e;
   border-radius: 10px;
   box-shadow: 3px 3px 5px #c5531d;
+  cursor: pointer;
+  transition: 200ms all;
 }
+
+.ejercicio:hover {
+  background-color: #e9b561;
+}
+
 .bloqueado {
   font-size: 50px;
   position: absolute;
