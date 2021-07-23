@@ -21,10 +21,11 @@ export const MenuLateral = (props) => {
       });
 
       const usuario = await response.json();
-      if (usuario.mensaje.includes("caducado")) {
+      if (usuario.mensaje?.includes("caducado")) {
         desloguearUsuario();
         return;
       }
+
       setDatosUsuario(usuario);
       setDatosFormaciones([...usuario.listadoFormaciones]);
     } catch (error) {
