@@ -351,6 +351,12 @@
   bottom: 0;
 }
 
+.monitor {
+  background-image: url(./pantalla.png);
+  background-repeat: no-repeat;
+  background-size: content;
+}
+
 @media (min-width: 992px) {
   .codecat-principal {
     padding-top: 50px;
