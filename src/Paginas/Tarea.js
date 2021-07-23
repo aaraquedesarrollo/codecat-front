@@ -8,8 +8,7 @@ import { ListaSinOrdenar } from "../components/ejercicios/ListaSinOrdenar";
 import { CabeceraCodecat } from "../components/CabeceraCodecat";
 import { MenuLateral } from "../components/MenuLateral";
 
-export const Tarea = (props) => {
-  const { toggleAbrirEjercicios } = props;
+export const Tarea = () => {
   const { idTrabajo } = useParams();
   const { datosFormaciones } = useContext(EjerciciosContext);
   const [index, setIndex] = useState(0);
@@ -49,15 +48,16 @@ export const Tarea = (props) => {
     <div className="contenedor-body container-fluid">
       <CabeceraCodecat />
       <div className="container">
-        <main className="codecat-principal row">
-          <MenuLateral toggleAbrirEjercicios={toggleAbrirEjercicios} />
-          <div className="monitor col-9">
-            <Row>
-              <Col onClick={paginaAnterior} xs="2">
+        <main className="codecat-principal row justify-content-center">
+          <div className="monitor">
+            <Row className="contenido-ejercicio">
+              <Col onClick={paginaAnterior} xs="2" className="text-center">
                 {"<"}
               </Col>
-              <Col xs="8">{datosEjercicio.nombre}</Col>
-              <Col onClick={paginaSiguiente} xs="2">
+              <Col xs="8" className="text-center">
+                {datosEjercicio.nombre}
+              </Col>
+              <Col onClick={paginaSiguiente} xs="2" className="text-center">
                 {">"}
               </Col>
               {datosEjercicio.nombre === "Header" && (

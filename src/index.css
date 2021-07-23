@@ -310,10 +310,10 @@
   text-align: center !important;
 }
 
-.ejercicio .input-ejercicio {
+.input-ejercicio {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin: 20px 0;
 }
 .ejercicio .primer-input,
@@ -354,7 +354,35 @@
 .monitor {
   background-image: url(./pantalla.png);
   background-repeat: no-repeat;
-  background-size: content;
+  font-family: "Press Start 2P";
+  padding: 70px 70px 100px 90px;
+  color: rgb(147, 240, 147);
+  display: flex;
+  flex-flow: wrap;
+  max-width: 850px;
+}
+
+.contenido-ejercicio {
+  max-height: 440px;
+  max-width: 710px;
+  overflow-y: scroll;
+  border-radius: 15px;
+}
+
+.enunciado {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.texto-ejercicio {
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comprobar-ejercicio {
+  margin: 0 auto;
+  padding: 5px;
 }
 
 @media (min-width: 992px) {

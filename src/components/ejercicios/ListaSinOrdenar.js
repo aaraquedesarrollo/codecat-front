@@ -53,7 +53,7 @@ export const ListaSinOrdenar = (props) => {
 
   return (
     <>
-      <Col as="h2" xs="12" className="text-center mt-3">
+      <Col as="h2" xs="12" className="enunciado text-center">
         {datosEjercicio.descripcion}
       </Col>
       <Col xs="12" className="input-ejercicio primer-input">
@@ -67,7 +67,7 @@ export const ListaSinOrdenar = (props) => {
         <input type="text" onChange={(e) => setInput2(e.target.value)} />
         <span>{" >"}</span>
       </Col>
-      <Col xs="12" className="text-right">
+      <Col xs="12" className="texto-ejercicio">
         Primer elemento
       </Col>
       <Col xs="8" className="input-ejercicio">
@@ -80,7 +80,9 @@ export const ListaSinOrdenar = (props) => {
         <input type="text" onChange={(e) => setInput3(e.target.value)} />
         <span>{" >"}</span>
       </Col>
-      <Col xs="12">Segundo elemento</Col>
+      <Col xs="12" className="texto-ejercicio">
+        Segundo elemento
+      </Col>
       <Col xs="8" className="input-ejercicio  justify-self-end">
         <span>{"</ "}</span>
         <input type="text" value={input3} readOnly />
@@ -92,7 +94,9 @@ export const ListaSinOrdenar = (props) => {
         <span>{" >"}</span>
       </Col>
 
-      <Button onClick={comprobarEjercicio}>Comprobar</Button>
+      <Button onClick={comprobarEjercicio} className="comprobar-ejercicio">
+        Comprobar
+      </Button>
       {acierto && "Bien!"}
       {texto !== "" && texto}
     </>

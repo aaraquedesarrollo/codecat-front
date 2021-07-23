@@ -42,7 +42,7 @@ export const HeaderEjercicio = (props) => {
 
   return (
     <>
-      <Col as="h2" xs="12" className="text-center mt-3">
+      <Col as="h2" xs="12" className="enunciado text-center">
         {datosEjercicio.descripcion}
       </Col>
       <Col xs="12" className="input-ejercicio primer-input">
@@ -50,7 +50,7 @@ export const HeaderEjercicio = (props) => {
         <input type="text" onChange={(e) => setInput1(e.target.value)} />
         <span>{" >"}</span>
       </Col>
-      <Col xs="12">
+      <Col xs="12" className="texto-ejercicio">
         <span>{"<h1>"}</span>
         <span>Esta es una cabecera</span>
         <span>{" </h1>"}</span>
@@ -61,7 +61,9 @@ export const HeaderEjercicio = (props) => {
         <span>{" >"}</span>
       </Col>
 
-      <Button onClick={comprobarEjercicio}>Comprobar</Button>
+      <Button onClick={comprobarEjercicio} className="comprobar-ejercicio">
+        Comprobar
+      </Button>
       {acierto && "Bien!"}
       {texto !== "" && texto}
     </>
