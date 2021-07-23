@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 import { useContext } from "react";
-import { EjerciciosContext } from "../../context/EjerciciosContext";
+import { EjerciciosContext } from "../context/EjerciciosContext";
 import { Ejercicio } from "./Ejercicio";
 
 export const Habitacion = (props) => {

@@ -1,5 +1,5 @@
-import { CabeceraCodecat } from "../components/CodeCat/CabeceraCodecat";
-import { MainCodeCat } from "../components/CodeCat/MainCodeCat";
+import { CabeceraCodecat } from "../components/CabeceraCodecat";
+import { MainCodeCat } from "../components/MainCodeCat";
 
 export const CodeCat = () => {
   return (

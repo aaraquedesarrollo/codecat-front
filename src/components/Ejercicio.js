@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { useCallback } from "react";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
-import { GeneralContext } from "../../context/GeneralContext";
 import { FcLock } from "react-icons/fc";
+import { AuthContext } from "../context/AuthContext";
+import { GeneralContext } from "../context/GeneralContext";
 
 export const Ejercicio = (props) => {
   const { ejercicio } = props;

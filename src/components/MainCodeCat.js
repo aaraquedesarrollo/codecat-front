@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import { GeneralContext } from "../../context/GeneralContext";
 import { useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { GeneralContext } from "../context/GeneralContext";
 import { Habitacion } from "./Habitacion";
 import { MenuLateral } from "./MenuLateral";
 

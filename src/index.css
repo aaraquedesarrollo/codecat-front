@@ -3,6 +3,7 @@
   --color-secundario: hsl(194, 53%, 49%);
   --color-formulario: #388096;
   --sombra-cajas: 5px 5px 8px #222;
+  --azul: rgb(41, 131, 233);
 }
 
 .cabecera {
@@ -216,6 +217,117 @@
   font-size: 40px;
   color: black;
   cursor: pointer;
+}
+
+/* Loading */
+
+body {
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.puntos {
+  position: relative;
+  left: 20px;
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: var(--azul);
+  color: var(--azul);
+  animation: puntosVariantes 0.8s infinite linear alternate;
+  animation-delay: 0.4s;
+}
+
+.puntos::before,
+.puntos::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.puntos::before {
+  left: -15px;
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: var(--azul);
+  color: var(--azul);
+  animation: puntosVariantes 0.8s infinite alternate;
+  animation-delay: 0s;
+}
+
+.puntos::after {
+  left: 15px;
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: var(--azul);
+  color: var(--azul);
+  animation: puntosVariantes 0.8s infinite alternate;
+  animation-delay: 0.8s;
+}
+
+/* Ejercicios */
+
+.ejercicio input {
+  height: 20px;
+  width: 60px;
+}
+
+.ejercicio span {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+.ejercicio > * {
+  text-align: center !important;
+}
+.ejercicio > * {
+  text-align: center !important;
+}
+
+.ejercicio .input-ejercicio {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+.ejercicio .primer-input,
+.ejercicio .ultimo-input {
+  justify-content: center;
+}
+
+@keyframes puntosVariantes {
+  0% {
+    background-color: var(--azul);
+  }
+  50%,
+  100% {
+    background-color: #ebe6ff00;
+  }
+}
+.loading {
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--azul);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.contenedor-loading {
+  display: flex;
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(204, 202, 202, 0.61);
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
 }
 
 @media (min-width: 992px) {
