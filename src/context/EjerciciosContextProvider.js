@@ -5,10 +5,16 @@ export const EjerciciosContextProvider = (props) => {
   const { children } = props;
 
   const [datosFormaciones, setDatosFormaciones] = useState([]);
+  const [listaTrabajos, setListaTrabajos] = useState([]);
 
   return (
     <EjerciciosContext.Provider
-      value={{ datosFormaciones, setDatosFormaciones }}
+      value={{
+        datosFormaciones,
+        setDatosFormaciones,
+        listaTrabajos,
+        setListaTrabajos,
+      }}
     >
       {children}
     </EjerciciosContext.Provider>

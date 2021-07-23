@@ -6,7 +6,6 @@ import { EjerciciosContext } from "../context/EjerciciosContext";
 import { HeaderEjercicio } from "../components/ejercicios/HeaderEjercicio";
 import { ListaSinOrdenar } from "../components/ejercicios/ListaSinOrdenar";
 import { CabeceraCodecat } from "../components/CabeceraCodecat";
-import { MenuLateral } from "../components/MenuLateral";
 
 export const Tarea = () => {
   const { idTrabajo } = useParams();

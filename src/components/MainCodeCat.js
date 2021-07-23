@@ -1,15 +1,29 @@
-import { useContext, useEffect } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { EjerciciosContext } from "../context/EjerciciosContext";
 import { GeneralContext } from "../context/GeneralContext";
 import { Habitacion } from "./Habitacion";
 import { MenuLateral } from "./MenuLateral";
 
-export const MainCodeCat = (props) => {
-  const { toggleAbrirEjercicios, abrirEjercicios } = props;
-  const { urlApi } = useContext(GeneralContext);
-  const { token } = useContext(AuthContext);
+export const MainCodeCat = () => {
+  const { token, desloguearUsuario } = useContext(AuthContext);
+  const { urlApi, setDatosUsuario } = useContext(GeneralContext);
+  const [abrirFormaciones, setAbrirFormaciones] = useState(false);
+  const [abrirTrabajos, setAbrirTrabajos] = useState(false);
+  const [abrirPopUpGato, setAbrirPopUpGato] = useState(false);
+  const { setDatosFormaciones, setListaTrabajos } =
+    useContext(EjerciciosContext);
 
-  // Funcion que comprueba si el usuario tiene historial o no y lo crea en caso de que no exista
+  const toggleAbrirFormaciones = () => {
+    setAbrirFormaciones(!abrirFormaciones);
+    setAbrirTrabajos(false);
+  };
+
+  const toggleAbrirTrabajos = () => {
+    setAbrirTrabajos(!abrirTrabajos);
+    setAbrirFormaciones(false);
+  };
+
   const crearHistorial = () => {
     fetch(urlApi + "historial/crear-historial", {
       method: "POST",
@@ -19,17 +33,54 @@ export const MainCodeCat = (props) => {
     });
   };
 
-  // AL inciarse el componente se llama a crearHistorial
+  const obtenerDatosUsuario = useCallback(async () => {
+    try {
+      const response = await fetch(urlApi + "codecat/cargar-informacion", {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+      const datosCodeCat = await response.json();
+      if (datosCodeCat.mensaje?.includes("caducado")) {
+        desloguearUsuario();
+        return;
+      }
+      const { usuario, siguienteNivel, nivelUsuario } = datosCodeCat;
+      setDatosUsuario({ usuario, siguienteNivel, nivelUsuario });
+      setDatosFormaciones(datosCodeCat.listadoFormaciones);
+      setListaTrabajos(datosCodeCat.listadoTrabajos);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [
+    desloguearUsuario,
+    setDatosFormaciones,
+    setDatosUsuario,
+    setListaTrabajos,
+    token,
+    urlApi,
+  ]);
+
+  useEffect(() => obtenerDatosUsuario(), [obtenerDatosUsuario]);
+
   useEffect(() => {
     crearHistorial();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  });
 
   return (
     <>
       <main className="codecat-principal row">
-        <MenuLateral toggleAbrirEjercicios={toggleAbrirEjercicios} />
-        <Habitacion abrirEjercicios={abrirEjercicios} />
+        <MenuLateral
+          toggleAbrirFormaciones={toggleAbrirFormaciones}
+          toggleAbrirTrabajos={toggleAbrirTrabajos}
+          abrirPopUpGato={abrirPopUpGato}
+        />
+        <Habitacion
+          abrirFormaciones={abrirFormaciones}
+          abrirTrabajos={abrirTrabajos}
+          abrirPopUpGato={abrirPopUpGato}
+          setAbrirPopUpGato={setAbrirPopUpGato}
+        />
       </main>
     </>
   );

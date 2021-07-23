@@ -8,11 +8,11 @@ import { GeneralContext } from "../context/GeneralContext";
 import { Ejercicio } from "./Ejercicio";
 
 export const Habitacion = (props) => {
-  const { abrirEjercicios } = props;
+  const { abrirFormaciones, abrirTrabajos, abrirPopUpGato, setAbrirPopUpGato } =
+    props;
   const { token } = useContext(AuthContext);
   const { datosUsuario, urlApi } = useContext(GeneralContext);
-  const { datosFormaciones } = useContext(EjerciciosContext);
-  const [abrirPopUpGato, setAbrirPopUpGato] = useState(false);
+  const { datosFormaciones, listaTrabajos } = useContext(EjerciciosContext);
   const [inputNombreGato, setInputNombreGato] = useState("");
   const [error, setError] = useState("");
 
@@ -42,15 +42,24 @@ export const Habitacion = (props) => {
         setAbrirPopUpGato(true);
       }
     }
-  }, [datosUsuario.length, datosUsuario.usuario?.gato]);
+  }, [datosUsuario.length, datosUsuario.usuario?.gato, setAbrirPopUpGato]);
 
   return (
     <section className="col-9">
       <div className={`${abrirPopUpGato ? "" : "habitacion "}row h-100`}>
-        {abrirEjercicios && (
+        {abrirFormaciones && (
           <section className="ventana-ejercicios col-12">
             <ul className="listado-ejercicios list-unstyled row">
               {datosFormaciones.map((ejercicio) => (
+                <Ejercicio key={ejercicio._id} ejercicio={ejercicio} />
+              ))}
+            </ul>
+          </section>
+        )}
+        {abrirTrabajos && (
+          <section className="ventana-ejercicios col-12">
+            <ul className="listado-ejercicios list-unstyled row">
+              {listaTrabajos.map((ejercicio) => (
                 <Ejercicio key={ejercicio._id} ejercicio={ejercicio} />
               ))}
             </ul>
@@ -90,5 +99,8 @@ export const Habitacion = (props) => {
 };
 
 Habitacion.propTypes = {
-  abrirEjercicios: PropTypes.bool.isRequired,
+  abrirFormaciones: PropTypes.bool.isRequired,
+  abrirTrabajos: PropTypes.bool.isRequired,
+  abrirPopUpGato: PropTypes.bool.isRequired,
+  setAbrirPopUpGato: PropTypes.func.isRequired,
 };

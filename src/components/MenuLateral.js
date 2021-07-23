@@ -1,38 +1,11 @@
 import { PropTypes } from "prop-types";
 import { useContext } from "react";
-import { useCallback } from "react";
-import { useEffect } from "react";
 import { ProgressBar } from "react-bootstrap";
-import { AuthContext } from "../context/AuthContext";
-import { EjerciciosContext } from "../context/EjerciciosContext";
 import { GeneralContext } from "../context/GeneralContext";
 
 export const MenuLateral = (props) => {
-  const { toggleAbrirEjercicios } = props;
-  const { token, desloguearUsuario } = useContext(AuthContext);
-  const { urlApi, datosUsuario, setDatosUsuario } = useContext(GeneralContext);
-  const { setDatosFormaciones } = useContext(EjerciciosContext);
-  const obtenerDatosUsuario = useCallback(async () => {
-    try {
-      const response = await fetch(urlApi + "codecat/cargar-informacion", {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      });
-
-      const datosCodeCat = await response.json();
-      if (datosCodeCat.mensaje?.includes("caducado")) {
-        desloguearUsuario();
-        return;
-      }
-      const { usuario, siguienteNivel, nivelUsuario } = datosCodeCat;
-      setDatosUsuario({ usuario, siguienteNivel, nivelUsuario });
-      setDatosFormaciones([...datosCodeCat.listadoFormaciones]);
-    } catch (error) {
-      console.log(error);
-    }
-  }, [desloguearUsuario, setDatosFormaciones, setDatosUsuario, token, urlApi]);
-  useEffect(() => obtenerDatosUsuario(), [obtenerDatosUsuario]);
+  const { toggleAbrirFormaciones, toggleAbrirTrabajos, abrirPopUpGato } = props;
+  const { datosUsuario } = useContext(GeneralContext);
 
   return (
     <section className="seccion-menu col-3">
@@ -41,20 +14,26 @@ export const MenuLateral = (props) => {
           <div className="menu">
             <div className="info-cat">
               <ul className="lista-info list-unstyled">
-                <li>Nombre:</li>
+                <li>Dueño:</li>
+                <li>Gato:</li>
+                <li>Chuches:</li>
                 <li>Nivel:</li>
                 <li>Posición:</li>
-                <li>Galletitas:</li>
               </ul>
               <ul className="lista-info list-unstyled">
                 <li> {datosUsuario.usuario.username}</li>
-                <li>{datosUsuario.nivelUsuario.nivel}</li>
-                <li> {datosUsuario.nivelUsuario.titulo}</li>
                 <li>
-                  {datosUsuario.usuario.galletas
-                    ? datosUsuario.usuario.galletas
+                  {datosUsuario.usuario.gato
+                    ? datosUsuario.usuario.gato
+                    : "\u200C"}
+                </li>
+                <li>
+                  {datosUsuario.usuario.chuches
+                    ? datosUsuario.usuario.chuches
                     : 0}
                 </li>
+                <li>{datosUsuario.nivelUsuario.nivel}</li>
+                <li> {datosUsuario.nivelUsuario.titulo}</li>
               </ul>
             </div>
             <div className="botones-menu col">
@@ -97,11 +76,17 @@ export const MenuLateral = (props) => {
               <button
                 className="boton-menu btn btn-light"
                 type="button"
-                onClick={toggleAbrirEjercicios}
+                onClick={toggleAbrirFormaciones}
+                disabled={abrirPopUpGato}
               >
                 Formación
               </button>
-              <button className="boton-menu btn btn-light" type="button">
+              <button
+                className="boton-menu btn btn-light"
+                type="button"
+                onClick={toggleAbrirTrabajos}
+                disabled={abrirPopUpGato}
+              >
                 Trabajos
               </button>
               <button className="boton-menu btn btn-light" type="button">
@@ -116,5 +101,6 @@ export const MenuLateral = (props) => {
 };
 
 MenuLateral.propTypes = {
-  toggleAbrirEjercicios: PropTypes.func.isRequired,
+  toggleAbrirFormaciones: PropTypes.func.isRequired,
+  toggleAbrirTrabajos: PropTypes.func.isRequired,
 };
