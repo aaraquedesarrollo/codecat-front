@@ -178,12 +178,11 @@
 }
 
 .listado-ejercicios {
-  background-color: #c1712a;
-  border: 2px solid #222;
+  background-color: #e68937;
   border-radius: 10px;
   align-items: center;
   flex: 1;
-  box-shadow: var(--sombra-cajas);
+  box-shadow: 5px 5px 8px #6b7b93;
 }
 
 .elemento-ejercicios {
@@ -193,9 +192,9 @@
 .ejercicio {
   position: relative !important;
   padding: 15px;
-  background-color: #f4c97d;
+  background-color: #fed38e;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px #744900;
+  box-shadow: 3px 3px 5px #c5531d;
 }
 .bloqueado {
   font-size: 50px;
