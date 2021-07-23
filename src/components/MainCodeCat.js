@@ -1,17 +1,13 @@
 import { useContext, useEffect } from "react";
-import { useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { GeneralContext } from "../context/GeneralContext";
 import { Habitacion } from "./Habitacion";
 import { MenuLateral } from "./MenuLateral";
 
-export const MainCodeCat = () => {
+export const MainCodeCat = (props) => {
+  const { toggleAbrirEjercicios, abrirEjercicios } = props;
   const { urlApi } = useContext(GeneralContext);
   const { token } = useContext(AuthContext);
-  const [abrirEjercicios, setAbrirEjercicios] = useState(false);
-  const toggleAbrirEjercicios = () => {
-    setAbrirEjercicios(!abrirEjercicios);
-  };
 
   // Funcion que comprueba si el usuario tiene historial o no y lo crea en caso de que no exista
   const crearHistorial = () => {
