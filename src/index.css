@@ -153,14 +153,15 @@
 }
 
 .info-cat {
-  padding: 5px;
+  padding: 40px 5px 30px 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--color-primario);
+  background-image: url(./panel-gato.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 10px;
   font-size: 10px;
-  box-shadow: 3px 3px 3px #084757;
 }
 
 .lista-info {
@@ -226,5 +227,12 @@
   }
   .info-cat {
     font-size: 15px;
+    padding-top: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .info-cat {
+    padding-top: 90px;
   }
 }
