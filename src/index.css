@@ -426,6 +426,10 @@
   padding: 5px;
 }
 
+.boton-tarea {
+  cursor: pointer;
+}
+
 @media (min-width: 992px) {
   .codecat-principal {
     padding-top: 50px;
