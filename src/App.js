@@ -13,6 +13,7 @@ import { GeneralContextProvider } from "./context/GeneralContextProvider";
 import { EjerciciosContextProvider } from "./context/EjerciciosContextProvider";
 import { Tarea } from "./Paginas/Tarea";
 import { TareaTemplate } from "./Paginas/TareaTemplate";
+import { LoguedProtecion } from "./components/LoguedProtection";
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
               <Loading />
               <Switch>
                 <Route path="/principal" exact>
-                  <PaginaPrincipal />
+                  <LoguedProtecion>
+                    <PaginaPrincipal />
+                  </LoguedProtecion>
                 </Route>
                 <Route path="/codecat" exact>
                   <CodeCat />
@@ -32,7 +35,7 @@ function App() {
                 <Route path="/" exact>
                   <Redirect to="/principal" />
                 </Route>
-                <Route path="/codecat/ejercicios/:idTrabajo" exact>
+                <Route path="/codecat/ejercicios/:idTrabajo/:index" exact>
                   {/* <Tarea /> */}
                   <TareaTemplate />
                 </Route>

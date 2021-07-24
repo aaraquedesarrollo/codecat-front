@@ -14,26 +14,40 @@ export const MenuLateral = (props) => {
           <div className="menu">
             <div className="info-cat">
               <ul className="lista-info list-unstyled">
-                <li>Dueño:</li>
-                <li>Gato:</li>
-                <li>Chuches:</li>
-                <li>Nivel:</li>
-                <li>Posición:</li>
-              </ul>
-              <ul className="lista-info list-unstyled">
-                <li> {datosUsuario.usuario.username}</li>
-                <li>
-                  {datosUsuario.usuario.gato
-                    ? datosUsuario.usuario.gato
-                    : "\u200C"}
+                <li className="dato-info">
+                  <span className="span-info">Dueño:</span>
+                  <span className="span-info">
+                    {datosUsuario.usuario.username}
+                  </span>
                 </li>
-                <li>
-                  {datosUsuario.usuario.chuches
-                    ? datosUsuario.usuario.chuches
-                    : 0}
+                <li className="dato-info">
+                  <span className="span-info">Gato:</span>
+                  <span className="span-info">
+                    {datosUsuario.usuario.gato
+                      ? datosUsuario.usuario.gato
+                      : "\u200C"}
+                  </span>
                 </li>
-                <li>{datosUsuario.nivelUsuario.nivel}</li>
-                <li> {datosUsuario.nivelUsuario.titulo}</li>
+                <li className="dato-info">
+                  <span className="span-info">Chuches:</span>
+                  <span className="span-info">
+                    {datosUsuario.usuario.chuches
+                      ? datosUsuario.usuario.chuches
+                      : 0}
+                  </span>
+                </li>
+                <li className="dato-info">
+                  <span className="span-info">Nivel:</span>
+                  <span className="span-info">
+                    {datosUsuario.nivelUsuario.nivel}
+                  </span>
+                </li>
+                <li className="dato-info">
+                  <span className="span-info">Posición:</span>
+                  <span className="span-info">
+                    {datosUsuario.nivelUsuario.titulo}
+                  </span>
+                </li>
               </ul>
             </div>
             <div className="botones-menu col">

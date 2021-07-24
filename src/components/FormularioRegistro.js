@@ -128,13 +128,13 @@ export const FormularioRegistro = (props) => {
             <div className="d-flex justify-content-around">
               <button
                 type="submit"
-                className="boton-formulario btn btn-primary"
+                className="boton-formulario-submit btn btn-primary"
               >
                 Registrar
               </button>
               <button
                 type="button"
-                className="boton-formulario btn btn-secondary"
+                className="boton-formulario-cancelar btn btn-secondary"
                 onClick={toggleRegistrando}
               >
                 Cancelar

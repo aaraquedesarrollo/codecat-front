@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Col } from "react-bootstrap";
@@ -55,12 +54,15 @@ export const HeaderEjercicio = (props) => {
         <input type="text" value={input1} readOnly />
         <span>{" >"}</span>
       </Col>
-
-      <Button onClick={comprobarEjercicio} className="comprobar-ejercicio">
-        Comprobar
-      </Button>
-      {acierto && "Bien!"}
-      {texto !== "" && texto}
+      <div className="comprobar-ejercicio">
+        <button onClick={comprobarEjercicio} className="btn btn-success">
+          Comprobar
+        </button>
+        <span>
+          {acierto && " ¡Está flama!"}
+          {texto !== "" && texto}
+        </span>
+      </div>
     </>
   );
 };

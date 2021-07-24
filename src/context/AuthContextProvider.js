@@ -12,8 +12,6 @@ export const AuthContextProvider = (props) => {
   useEffect(() => {
     if (!token) {
       history.push("/principal");
-    } else {
-      history.push("/codecat");
     }
   }, [history, token]);
   const loguearUsuario = (token) => {
