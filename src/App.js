@@ -12,6 +12,7 @@ import { Loading } from "./components/Loading";
 import { GeneralContextProvider } from "./context/GeneralContextProvider";
 import { EjerciciosContextProvider } from "./context/EjerciciosContextProvider";
 import { Tarea } from "./Paginas/Tarea";
+import { TareaTemplate } from "./Paginas/TareaTemplate";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
                   <Redirect to="/principal" />
                 </Route>
                 <Route path="/codecat/ejercicios/:idTrabajo" exact>
-                  <Tarea />
+                  {/* <Tarea /> */}
+                  <TareaTemplate />
                 </Route>
                 <Route path="**" exact>
                   <PaginaNotFound />

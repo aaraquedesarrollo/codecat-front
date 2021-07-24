@@ -24,14 +24,14 @@ export const MainCodeCat = () => {
     setAbrirFormaciones(false);
   };
 
-  const crearHistorial = () => {
+  const crearHistorial = useCallback(() => {
     fetch(urlApi + "historial/crear-historial", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + token,
       },
     });
-  };
+  }, [token, urlApi]);
 
   const obtenerDatosUsuario = useCallback(async () => {
     try {
@@ -65,7 +65,7 @@ export const MainCodeCat = () => {
 
   useEffect(() => {
     crearHistorial();
-  });
+  }, [crearHistorial]);
 
   return (
     <>
