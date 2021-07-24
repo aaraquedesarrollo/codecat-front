@@ -397,7 +397,7 @@
 .contenido-ejercicio {
   max-height: 440px;
   max-width: 710px;
-  overflow-y: scroll;
+  overflow-y: auto;
   border-radius: 15px;
 }
 
