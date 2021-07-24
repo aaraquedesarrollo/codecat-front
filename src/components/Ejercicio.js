@@ -13,7 +13,7 @@ export const Ejercicio = (props) => {
     if (datosUsuario.nivelUsuario.nivel < ejercicio.nivel_minimo) {
       return;
     }
-    history.push("codecat/ejercicios/" + id);
+    history.push("codecat/ejercicios/" + id + "/" + 0);
   };
   return (
     <>
@@ -24,7 +24,7 @@ export const Ejercicio = (props) => {
         <div className="ejercicio">
           <ul className="list-unstyled">
             <li>Formación: {ejercicio.nombre}</li>
-            <li>Tema: HTML</li>
+            <li>Tema: {ejercicio.categoria}</li>
             <li>Nivel Requerido: {ejercicio.nivel_minimo}</li>
           </ul>
           {datosUsuario.nivelUsuario.nivel < ejercicio.nivel_minimo && (
