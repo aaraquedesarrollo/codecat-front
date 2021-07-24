@@ -412,6 +412,15 @@
   justify-content: flex-end;
 }
 
+.enlace-volver {
+  background-color: #dd8e52;
+  border: 0;
+}
+
+.enlace-volver:hover {
+  background-color: #945823;
+}
+
 .comprobar-ejercicio {
   margin: 0 auto;
   padding: 5px;

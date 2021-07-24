@@ -63,7 +63,10 @@ export const Tarea = () => {
       <CabeceraCodecat />
       <div className="container">
         <main className="codecat-principal row justify-content-center">
-          <a href="/codecat" className="col-1 btn btn-info align-self-start">
+          <a
+            href="/codecat"
+            className="enlace-volver col-1 btn btn-info align-self-start"
+          >
             Volver
           </a>
           <div className="monitor">
