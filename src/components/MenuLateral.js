@@ -106,7 +106,11 @@ export const MenuLateral = (props) => {
               >
                 Trabajos
               </button>
-              <button className="boton-menu btn btn-light mb-3" type="button">
+              <button
+                className="boton-menu btn btn-light mb-3"
+                type="button"
+                disabled
+              >
                 Tienda
               </button>
             </div>
