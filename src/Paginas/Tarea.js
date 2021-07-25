@@ -50,7 +50,7 @@ export const Tarea = () => {
     <div className="contenedor-body container-fluid">
       <CabeceraCodecat />
       <div className="container">
-        <main className="codecat-principal row justify-content-center">
+        <main className="codecat-principal contenedor-monitor row justify-content-center">
           <a
             href="/codecat"
             className="enlace-volver col-1 btn btn-info align-self-start"

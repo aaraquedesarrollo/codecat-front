@@ -16,7 +16,7 @@ export const TareaHTMLTemplate = () => {
   const history = useHistory();
   const [ejercicioActual, setEjercicioActual] = useState(null);
   const [tareasCompletadas, setTareasCompletadas] = useState(null);
-  const [tareaActualCompletada, setTareaActualCompletada] = useState(false);
+  const [tareaCompletada, setTareaCompletada] = useState(false);
   const [listaInputs, setListaInputs] = useState([]);
   const [error, setError] = useState(false);
   const [acierto, setAcierto] = useState(false);
@@ -27,7 +27,7 @@ export const TareaHTMLTemplate = () => {
     setEjercicioActual(resultado);
   }, [idTrabajo, urlApi]);
 
-  const cargarTareas = useCallback(async () => {
+  const cargarTareasCompletadas = useCallback(async () => {
     const resp = await fetch(
       urlApi + "historial/obtener-historial/trabajo/" + idTrabajo,
       {
@@ -167,7 +167,7 @@ export const TareaHTMLTemplate = () => {
           headers: { Authorization: "Bearer " + token },
         }
       );
-      cargarTareas();
+      cargarTareasCompletadas();
     } catch (err) {
       setError(true);
     }
@@ -175,8 +175,8 @@ export const TareaHTMLTemplate = () => {
 
   useEffect(() => {
     cargarEjericicio();
-    cargarTareas();
-  }, [cargarEjericicio, cargarTareas]);
+    cargarTareasCompletadas();
+  }, [cargarEjericicio, cargarTareasCompletadas]);
 
   useEffect(() => {
     setListaInputs(
@@ -189,9 +189,9 @@ export const TareaHTMLTemplate = () => {
   useEffect(() => {
     if (tareasCompletadas && ejercicioActual) {
       if (tareasCompletadas.includes(ejercicioActual.tareas[indiceTarea]._id)) {
-        setTareaActualCompletada(true);
+        setTareaCompletada(true);
       } else {
-        setTareaActualCompletada(false);
+        setTareaCompletada(false);
       }
     }
   }, [ejercicioActual, indiceTarea, tareasCompletadas]);
@@ -202,13 +202,15 @@ export const TareaHTMLTemplate = () => {
         <>
           <CabeceraCodecat />
           <div className="container">
-            <main className="codecat-principal row justify-content-center">
-              <a
-                href="/codecat"
-                className="col-1 btn btn-info align-self-start"
-              >
-                Volver
-              </a>
+            <main className="codecat-principal contenedor-monitor row align-content-center flex-column">
+              <div className="text-center">
+                <a
+                  href="/codecat"
+                  className="boton-principal boton-monitor btn btn-info align-self-start"
+                >
+                  Volver
+                </a>
+              </div>
               <div className="monitor">
                 <Row className="contenido-ejercicio">
                   <Col xs="2" className="text-center">
@@ -232,7 +234,7 @@ export const TareaHTMLTemplate = () => {
                     {ejercicioActual &&
                       ejercicioActual?.tareas[indiceTarea].descripcion}
                   </Col>
-                  {tareaActualCompletada ? (
+                  {tareaCompletada ? (
                     <Col xs="12" className="text-center">
                       <img
                         src="/img/codecat-imagen.png"
@@ -249,7 +251,7 @@ export const TareaHTMLTemplate = () => {
                       ejercicioActual.tareas[indiceTarea].objetivos
                     )
                   )}
-                  {!tareaActualCompletada && (
+                  {!tareaCompletada && (
                     <div className="col-12 text-center">
                       <Button
                         className="comprobar-ejercicio"
