@@ -40,19 +40,13 @@ export const TareaHTMLTemplate = () => {
   }, [idTrabajo, token, urlApi]);
 
   const paginaAnterior = () => {
-    if (+indiceTarea === 0) {
-      history.push(
-        `/codecat/ejercicios/${ejercicioActual.tipo}/${idTrabajo}/${
-          ejercicioActual.tareas.length - 1
-        }`
-      );
-      return;
-    }
     history.push(
       `/codecat/ejercicios/${ejercicioActual.tipo}/${idTrabajo}/${
         +indiceTarea - 1
       }`
     );
+    setError(false);
+    setAcierto(false);
   };
 
   const paginaSiguiente = () => {
@@ -67,6 +61,8 @@ export const TareaHTMLTemplate = () => {
         +indiceTarea + 1
       }`
     );
+    setError(false);
+    setAcierto(false);
   };
 
   const changeInput = (e, indice) => {
@@ -120,6 +116,7 @@ export const TareaHTMLTemplate = () => {
                 type="text"
                 readOnly
                 value={"/" + listaInputs[indiceEtiqueta]}
+                tabindex="-1"
               />
               <span>{" >"}</span>
             </Col>
