@@ -50,27 +50,44 @@ export const TareaTemplate = () => {
     );
   };
 
-  const listarObjetivosOrdenados = (padreInput, indiceCosa = 0) => {
+  const listarObjetivosOrdenados = (
+    padreInput,
+    indiceEtiqueta = 0,
+    posicionHtml = 0
+  ) => {
+    debugger;
     if (formacionActual) {
       if (typeof listaInputs !== "undefined" && listaInputs.length !== 0)
         return (
           <>
-            <Col xs="12" className="input-ejercicio">
+            <Col
+              xs="8"
+              className={`input-ejercicio offset-${posicionHtml}`}
+              key={padreInput.etiqueta + "-abertura-" + indiceEtiqueta}
+            >
               <span>{"< "}</span>
               <input
                 type="text"
-                value={listaInputs[indiceCosa]}
-                onChange={(e) => changeInput(e, indiceCosa)}
+                value={listaInputs[indiceEtiqueta]}
+                onChange={(e) => changeInput(e, indiceEtiqueta)}
               />
               <span>{" >"}</span>
             </Col>
             {padreInput.children &&
-              padreInput.children.map((erninyo, indiceMap) =>
-                listarObjetivosOrdenados(erninyo, indiceCosa + (indiceMap + 1))
+              padreInput.children.map((children, indiceMap) =>
+                listarObjetivosOrdenados(
+                  children,
+                  indiceEtiqueta + (indiceMap + 1),
+                  posicionHtml + 1
+                )
               )}
-            <Col xs="12" className="input-ejercicio ultimo-input">
+            <Col
+              xs="8"
+              className={`input-ejercicio offset-${posicionHtml}`}
+              key={padreInput.etiqueta + "-cierre-" + indiceEtiqueta}
+            >
               <span>{"</ "} </span>
-              <input type="text" readOnly value={listaInputs[indiceCosa]} />
+              <input type="text" readOnly value={listaInputs[indiceEtiqueta]} />
               <span>{" >"}</span>
             </Col>
           </>
@@ -78,18 +95,15 @@ export const TareaTemplate = () => {
     }
   };
 
-  const cargarListaInputs = useCallback(
-    (indice, iterando = [], contador = 0) => {
-      contador = contador + 1;
-      if (iterando.children) {
-        for (const padre of iterando.children) {
-          contador = cargarListaInputs(indice + 1, padre, contador++);
-        }
+  const cargarListaInputs = useCallback((iterando = [], contador = 0) => {
+    contador = contador + 1;
+    if (iterando.children) {
+      for (const padre of iterando.children) {
+        contador = cargarListaInputs(padre, contador++);
       }
-      return contador;
-    },
-    []
-  );
+    }
+    return contador;
+  }, []);
 
   const comprobarRespuesta = (padre, indice = 0) => {
     try {
@@ -130,13 +144,9 @@ export const TareaTemplate = () => {
   }, [cargarFormacion]);
 
   useEffect(() => {
-    let indice = 0;
     setListaInputs(
       new Array(
-        cargarListaInputs(
-          indice,
-          formacionActual?.tareas[indiceTarea].objetivos
-        )
+        cargarListaInputs(formacionActual?.tareas[indiceTarea].objetivos)
       ).fill("")
     );
   }, [cargarListaInputs, formacionActual?.tareas, indiceTarea]);
@@ -145,7 +155,6 @@ export const TareaTemplate = () => {
     <div className="contenedor-body container-fluid">
       {formacionActual && (
         <>
-          {" "}
           <CabeceraCodecat />
           <div className="container">
             <main className="codecat-principal row justify-content-center">
@@ -173,16 +182,18 @@ export const TareaTemplate = () => {
                   {listarObjetivosOrdenados(
                     formacionActual.tareas[indiceTarea].objetivos
                   )}
-                  <Button
-                    className="comprobar-ejercicio"
-                    onClick={() =>
-                      setRespuesta(
-                        formacionActual.tareas[indiceTarea].objetivos
-                      )
-                    }
-                  >
-                    Comprobar
-                  </Button>
+                  <div className="col-12 text-center">
+                    <Button
+                      className="comprobar-ejercicio"
+                      onClick={() =>
+                        setRespuesta(
+                          formacionActual.tareas[indiceTarea].objetivos
+                        )
+                      }
+                    >
+                      Comprobar
+                    </Button>
+                  </div>
                   {error && <p>Parece que hay algo que tienes mal</p>}
                   {acierto && <p> Correcto!</p>}
                 </Row>

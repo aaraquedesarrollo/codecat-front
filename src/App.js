@@ -11,7 +11,7 @@ import { PaginaPrincipal } from "./Paginas/PaginaPrincipal";
 import { Loading } from "./components/Loading";
 import { GeneralContextProvider } from "./context/GeneralContextProvider";
 import { EjerciciosContextProvider } from "./context/EjerciciosContextProvider";
-import { Tarea } from "./Paginas/Tarea";
+// import { Tarea } from "./Paginas/Tarea";
 import { TareaTemplate } from "./Paginas/TareaTemplate";
 import { LoguedProtecion } from "./components/LoguedProtection";
 

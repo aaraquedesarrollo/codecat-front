@@ -329,8 +329,17 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 20px 0;
+  margin-block: 20px;
 }
+.input-ejercicio input[type="text"] {
+  background-color: #3c3836;
+  color: rgb(70, 230, 70);
+}
+
+/* .etiqueta-cierre {
+  margin-right: 10px;
+} */
+
 .ejercicio .primer-input,
 .ejercicio .ultimo-input {
   justify-content: center;
@@ -388,7 +397,7 @@
   background-repeat: no-repeat;
   font-family: "Press Start 2P";
   padding: 70px 70px 100px 90px;
-  color: rgb(147, 240, 147);
+  color: rgb(70, 230, 70);
   display: flex;
   flex-flow: wrap;
   max-width: 850px;
