@@ -12,7 +12,7 @@ import { Loading } from "./components/Loading";
 import { GeneralContextProvider } from "./context/GeneralContextProvider";
 import { EjerciciosContextProvider } from "./context/EjerciciosContextProvider";
 // import { Tarea } from "./Paginas/Tarea";
-import { TareaTemplate } from "./Paginas/TareaTemplate";
+import { TareaHTMLTemplate } from "./Paginas/TareaHTMLTemplate";
 import { LoguedProtecion } from "./components/LoguedProtection";
 
 function App() {
@@ -35,9 +35,12 @@ function App() {
                 <Route path="/" exact>
                   <Redirect to="/principal" />
                 </Route>
-                <Route path="/codecat/ejercicios/:idTrabajo/:index" exact>
+                <Route
+                  path="/codecat/ejercicios/html/:idTrabajo/:indiceTarea"
+                  exact
+                >
                   {/* <Tarea /> */}
-                  <TareaTemplate />
+                  <TareaHTMLTemplate />
                 </Route>
                 <Route path="**" exact>
                   <PaginaNotFound />

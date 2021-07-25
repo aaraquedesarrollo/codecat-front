@@ -261,6 +261,14 @@
   cursor: pointer;
 }
 
+.icono-tarea {
+  font-size: 30px;
+}
+
+.icono-error {
+  color: red;
+}
+
 /* Loading */
 
 .puntos {
@@ -336,9 +344,9 @@
   color: rgb(70, 230, 70);
 }
 
-/* .etiqueta-cierre {
-  margin-right: 10px;
-} */
+.etiqueta-cierre input {
+  cursor: auto;
+}
 
 .ejercicio .primer-input,
 .ejercicio .ultimo-input {

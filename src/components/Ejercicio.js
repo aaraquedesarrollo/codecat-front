@@ -13,7 +13,7 @@ export const Ejercicio = (props) => {
     if (datosUsuario.nivelUsuario.nivel < ejercicio.nivel_minimo) {
       return;
     }
-    history.push("codecat/ejercicios/" + id + "/" + 0);
+    history.push(`codecat/ejercicios/${ejercicio.tipo}/${id}/0`);
   };
   return (
     <>
