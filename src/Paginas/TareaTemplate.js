@@ -65,7 +65,7 @@ export const TareaTemplate = () => {
               className={`input-ejercicio offset-${posicionHtml}`}
               key={padreInput.etiqueta + "-abertura-" + indiceEtiqueta}
             >
-              <span>{"< "}</span>
+              <span>{"<"}</span>
               <input
                 type="text"
                 value={listaInputs[indiceEtiqueta]}
@@ -86,8 +86,12 @@ export const TareaTemplate = () => {
               className={`input-ejercicio offset-${posicionHtml}`}
               key={padreInput.etiqueta + "-cierre-" + indiceEtiqueta}
             >
-              <span>{"</ "} </span>
-              <input type="text" readOnly value={listaInputs[indiceEtiqueta]} />
+              <span>{"<"} </span>
+              <input
+                type="text"
+                readOnly
+                value={"/" + listaInputs[indiceEtiqueta]}
+              />
               <span>{" >"}</span>
             </Col>
           </>
