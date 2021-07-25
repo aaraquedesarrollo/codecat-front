@@ -50,12 +50,6 @@ export const TareaHTMLTemplate = () => {
   };
 
   const paginaSiguiente = () => {
-    if (+indiceTarea === ejercicioActual.tareas.length - 1) {
-      history.push(
-        `/codecat/ejercicios/${ejercicioActual.tipo}/${idTrabajo}/${0}`
-      );
-      return;
-    }
     history.push(
       `/codecat/ejercicios/${ejercicioActual.tipo}/${idTrabajo}/${
         +indiceTarea + 1

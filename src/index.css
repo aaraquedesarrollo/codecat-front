@@ -350,8 +350,10 @@
   align-items: center;
   justify-content: flex-start;
   margin-block: 20px;
+  flex-wrap: wrap;
 }
-.input-ejercicio input[type="text"] {
+.input-ejercicio input[type="text"],
+select {
   background-color: #3c3836;
   color: rgb(70, 230, 70);
 }
@@ -416,11 +418,12 @@
   background-image: url(./pantalla.png);
   background-repeat: no-repeat;
   font-family: "Press Start 2P";
-  padding: 70px 70px 230px 90px;
+  padding: 70px 70px 0px 90px;
   color: rgb(70, 230, 70);
   display: flex;
   flex-flow: wrap;
   max-width: 850px;
+  min-height: 615px;
 }
 
 .contenido-ejercicio {
@@ -457,6 +460,14 @@
 
 .boton-tarea {
   cursor: pointer;
+}
+
+.tipo-test select {
+  width: 100px;
+}
+
+.tipo-test .espaciado {
+  color: #3c3836;
 }
 
 @media (min-width: 992px) {

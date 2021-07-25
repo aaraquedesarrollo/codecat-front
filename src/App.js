@@ -14,6 +14,7 @@ import { EjerciciosContextProvider } from "./context/EjerciciosContextProvider";
 // import { Tarea } from "./Paginas/Tarea";
 import { TareaHTMLTemplate } from "./Paginas/TareaHTMLTemplate";
 import { LoguedProtecion } from "./components/LoguedProtection";
+import { TareaTestTemplate } from "./Paginas/TareaTestTemplate";
 
 function App() {
   return (
@@ -39,8 +40,10 @@ function App() {
                   path="/codecat/ejercicios/html/:idTrabajo/:indiceTarea"
                   exact
                 >
-                  {/* <Tarea /> */}
                   <TareaHTMLTemplate />
+                </Route>
+                <Route path="/codecat/ejercicios/test/:idTrabajo/:indiceTarea">
+                  <TareaTestTemplate />
                 </Route>
                 <Route path="**" exact>
                   <PaginaNotFound />
