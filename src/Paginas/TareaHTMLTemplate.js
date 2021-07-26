@@ -236,6 +236,9 @@ export const TareaHTMLTemplate = () => {
                       <div>
                         <p>¡Tarea completada!</p>
                       </div>
+                      <div>
+                        <p>{`Has ganado ${ejercicioActual.tareas[indiceTarea].recompensa.chuches} chuches y ${ejercicioActual.tareas[indiceTarea].recompensa.experiencia} puntos de experiencia`}</p>
+                      </div>
                     </Col>
                   ) : (
                     listarObjetivosOrdenados(
