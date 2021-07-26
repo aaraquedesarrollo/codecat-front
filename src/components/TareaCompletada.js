@@ -9,7 +9,7 @@ export const TareaCompletada = (props) => {
         alt="Mario felicitandote por haber completado la tarea"
       />
       <div>
-        <p className="mt-2">¡Esta flama!</p>
+        <p className="mt-2">¡Está flama!</p>
       </div>
       <div>
         <p>{`Has ganado ${ejercicioActual.tareas[indiceTarea].recompensa.chuches} chuches y ${ejercicioActual.tareas[indiceTarea].recompensa.experiencia} puntos de experiencia`}</p>
