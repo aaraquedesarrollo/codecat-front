@@ -51,11 +51,11 @@ export const MenuLateral = (props) => {
               </ul>
             </div>
             <div className="botones-menu col">
-              <div className="text-dark text-center mt-4">
+              <div className="experiencia text-dark text-center">
                 Experiencia: {datosUsuario.usuario.experiencia}
               </div>
               <ProgressBar
-                className="barra-progreso progress p-0 mb-1"
+                className="barra-progreso progress p-0"
                 striped
                 animated
                 variant="info"
@@ -91,7 +91,7 @@ export const MenuLateral = (props) => {
                 }
               />
               <button
-                className="boton-menu boton-formacion btn btn-light mb-3"
+                className="boton-menu boton-formacion btn btn-light"
                 type="button"
                 onClick={toggleAbrirFormaciones}
                 disabled={abrirPopUpGato}
@@ -99,7 +99,7 @@ export const MenuLateral = (props) => {
                 Formación
               </button>
               <button
-                className="boton-menu boton-trabajo btn btn-light mb-3"
+                className="boton-menu boton-trabajo btn btn-light"
                 type="button"
                 onClick={toggleAbrirTrabajos}
                 disabled={abrirPopUpGato}
@@ -107,7 +107,7 @@ export const MenuLateral = (props) => {
                 Trabajos
               </button>
               <button
-                className="boton-menu boton-tienda btn btn-light mb-3"
+                className="boton-menu boton-tienda btn btn-light"
                 type="button"
                 disabled
               >

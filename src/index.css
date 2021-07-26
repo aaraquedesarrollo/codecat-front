@@ -176,9 +176,15 @@
   border-radius: 10px;
 }
 
+.experiencia {
+  margin-top: 10px;
+}
+
 .barra-progreso {
   background-color: lightblue;
-  min-height: 15px;
+  min-height: 12px;
+  width: 75%;
+  align-self: center;
 }
 
 .info-cat {
@@ -217,7 +223,8 @@
   background-image: url(fondo-menu.png);
   background-repeat: no-repeat;
   background-size: contain;
-  min-height: 320px;
+  max-height: 268px;
+  font-size: 13px;
 }
 
 .boton-menu {
@@ -225,11 +232,16 @@
   background-color: transparent;
   border: 0;
   align-self: center;
-  min-height: 70px;
+  min-height: 50px;
   min-width: 140px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  font-size: 13px;
+}
+
+.boton-menu:hover {
+  background-color: transparent;
 }
 
 .boton-formacion {
@@ -513,5 +525,22 @@ select {
   .info-cat {
     padding-top: 75px;
     margin-left: 8px;
+  }
+  .botones-menu {
+    font-size: 15px;
+    min-height: 320px;
+  }
+  .boton-menu {
+    font-size: 15px;
+    min-height: 70px;
+    min-width: 140px;
+    margin-bottom: 12px;
+  }
+  .barra-progreso {
+    margin-bottom: 15px;
+    min-height: 15px;
+  }
+  .experiencia {
+    margin-top: 25px;
   }
 }
