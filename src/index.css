@@ -426,7 +426,7 @@ select {
   padding: 5px 0;
   border-bottom-left-radius: 0px !important;
   border-radius: 30px;
-  border: 3px solid rgb(59, 59, 59);
+  border: 1px solid rgb(59, 59, 59);
 }
 /* locutor */
 .locutor {
@@ -467,7 +467,7 @@ select {
 .formulario-nombre-gato {
   background-color: #c1712a;
   padding: 20px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
 }
 
