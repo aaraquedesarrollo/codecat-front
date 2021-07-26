@@ -68,39 +68,6 @@ export const TareaTestTemplate = () => {
     );
   };
 
-  // const funcionRara = () => {
-  //   let indice = 0;
-  //   const nose = ejercicioActual.tareas[indiceTarea].etiqueta
-  //     .split("-")
-  //     .map((espacio) => {
-  //       try {
-  //         if (espacio === "b") {
-  //           indice--;
-  //           return <span className="espaciado">a</span>;
-  //         } else {
-  //           console.log(indice);
-  //           return (
-  //             <>
-  //               <select onChange={(e) => changeInput(e, indice)}>
-  //                 {ejercicioActual.tareas[indiceTarea].objetivos[
-  //                   indice
-  //                 ]?.soluciones.map((solucion) => (
-  //                   <option value={solucion}>{solucion}</option>
-  //                 ))}
-  //               </select>
-  //               <span className={espacio === "a" ? "espaciado" : ""}>
-  //                 {espacio}
-  //               </span>
-  //             </>
-  //           );
-  //         }
-  //       } finally {
-  //         indice++;
-  //       }
-  //     });
-  //   return nose;
-  // };
-
   const listarInputsTest = () => {
     if (ejercicioActual) {
       if (typeof listaInputs !== "undefined" && listaInputs.length !== 0) {
@@ -180,7 +147,6 @@ export const TareaTestTemplate = () => {
   }, [cargarEjericicio, cargarTareasCompletadas]);
 
   useEffect(() => {
-    debugger;
     if (ejercicioActual)
       setListaInputs(
         ejercicioActual.tareas[indiceTarea].objetivos.map((objetivo) => "")
@@ -205,7 +171,7 @@ export const TareaTestTemplate = () => {
           <div className="text-center">
             <a
               href="/codecat"
-              className="boton-principal boton-monitor btn btn-info align-self-start"
+              className="enlace-volver boton-monitor btn btn-info align-self-start"
             >
               Volver
             </a>

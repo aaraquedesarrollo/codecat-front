@@ -163,7 +163,7 @@
 }
 
 .seccion-menu {
-  align-self: center;
+  align-self: start;
   height: 400px;
   display: flex;
 }
