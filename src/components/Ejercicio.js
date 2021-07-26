@@ -23,7 +23,7 @@ export const Ejercicio = (props) => {
       >
         <div className="ejercicio">
           <ul className="list-unstyled">
-            <li>Formación: {ejercicio.nombre}</li>
+            <li style={{ fontWeight: "bold" }}>{ejercicio.nombre}</li>
             <li>Tema: {ejercicio.categoria}</li>
             <li>Nivel Requerido: {ejercicio.nivel_minimo}</li>
           </ul>
