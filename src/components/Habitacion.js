@@ -11,7 +11,7 @@ export const Habitacion = (props) => {
   const { abrirFormaciones, abrirTrabajos, abrirPopUpGato, setAbrirPopUpGato } =
     props;
   const { token } = useContext(AuthContext);
-  const { datosUsuario, urlApi } = useContext(GeneralContext);
+  const { datosUsuario, urlApi, setDatosUsuario } = useContext(GeneralContext);
   const { datosFormaciones, listaTrabajos } = useContext(EjerciciosContext);
   const [inputNombreGato, setInputNombreGato] = useState("");
   const [error, setError] = useState("");
@@ -31,9 +31,19 @@ export const Habitacion = (props) => {
         throw resultado;
       }
       setAbrirPopUpGato(false);
+      cargarInformacionUsuario();
     } catch (err) {
       setError(err.mensaje);
     }
+  };
+
+  const cargarInformacionUsuario = async () => {
+    const resp = await fetch(`${urlApi}usuarios/informacion-usuario`, {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    });
+    const resultado = await resp.json();
+    setDatosUsuario({ ...datosUsuario, usuario: resultado });
   };
 
   useEffect(() => {
@@ -45,7 +55,7 @@ export const Habitacion = (props) => {
   }, [datosUsuario.length, datosUsuario.usuario?.gato, setAbrirPopUpGato]);
 
   return (
-    <section className="col-9">
+    <section className="col-9" onClick={cargarInformacionUsuario}>
       <div className={`${abrirPopUpGato ? "" : "habitacion "}row h-100`}>
         {abrirFormaciones && (
           <section className="ventana-ejercicios col-12">
