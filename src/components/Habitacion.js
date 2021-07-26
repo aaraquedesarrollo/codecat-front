@@ -96,11 +96,11 @@ export const Habitacion = (props) => {
                   >
                     Ei! Primero ponle un nombre a tu compañero felino!
                   </div>
-                  <div className="form-group">
+                  <div className="form-group d-flex justify-content-center">
                     <input
                       type="text"
                       id="nombre-gato"
-                      className="form-control mt-4"
+                      className="form-control mt-4 w-50"
                       value={inputNombreGato}
                       onChange={(e) => setInputNombreGato(e.target.value)}
                     ></input>
