@@ -51,11 +51,11 @@ export const MenuLateral = (props) => {
               </ul>
             </div>
             <div className="botones-menu col">
-              <div className="text-light">
+              <div className="text-dark text-center mt-4">
                 Experiencia: {datosUsuario.usuario.experiencia}
               </div>
               <ProgressBar
-                className="progress p-0 mb-3"
+                className="barra-progreso progress p-0 mb-3"
                 striped
                 animated
                 variant="info"
