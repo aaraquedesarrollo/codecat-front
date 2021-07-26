@@ -47,7 +47,6 @@ export const TareaTestTemplate = () => {
   };
 
   const paginaSiguiente = () => {
-    debugger;
     history.push(
       `/codecat/ejercicios/${
         ejercicioActual.tareas[+indiceTarea + 1].tipo
