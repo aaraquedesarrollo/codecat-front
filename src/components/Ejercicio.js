@@ -23,7 +23,7 @@ export const Ejercicio = (props) => {
         return;
       }
     }
-    history.push(`codecat/ejercicios/${ejercicio.tareas[0].tipo}/${id}/0`);
+    history.push(`codecat/ejercicios/${id}/0`);
   };
   useEffect(() => {
     setTrabajoHistorial(
@@ -32,7 +32,6 @@ export const Ejercicio = (props) => {
       )
     );
   }, [ejercicio, ejercicio._id, historialUsuario.trabajos, trabajoHistorial]);
-  console.log(trabajoHistorial);
   return (
     <>
       <li
