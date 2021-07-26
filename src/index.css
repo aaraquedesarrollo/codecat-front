@@ -421,6 +421,19 @@ select {
   justify-content: center;
 }
 
+.nombre-gato {
+  background-color: white;
+  padding: 5px 0;
+  border-bottom-left-radius: 0px !important;
+  border-radius: 30px;
+  border: 3px solid rgb(59, 59, 59);
+}
+/* locutor */
+.locutor {
+  left: 20px;
+  width: 200px;
+}
+
 @keyframes puntosVariantes {
   0% {
     background-color: var(--azul);

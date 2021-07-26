@@ -76,17 +76,29 @@ export const Habitacion = (props) => {
           </section>
         )}
         {abrirPopUpGato && (
-          <div className="ventana-ejercicios justify-content-center col-12">
-            <div className="formulario-nombre-gato">
-              <form noValidate={true} onSubmit={submitNombreGato}>
+          <div className="ventana-ejercicios justify-content-center col-12 position-relative">
+            <div className="formulario-nombre-gato row">
+              <img
+                src="img\locutormisterioso.png"
+                alt="locutor misterioso sujetando un café"
+                className="locutor col-5"
+              />
+              <form
+                noValidate={true}
+                onSubmit={submitNombreGato}
+                className="col-6"
+              >
                 <div className="form-group">
-                  <label htmlFor="nombre-gato">
-                    Ponle un nombre a tu compañero felino:{" "}
+                  <label
+                    htmlFor="nombre-gato"
+                    className="nombre-gato text-center"
+                  >
+                    Ponle un nombre a tu compañero felino
                   </label>
                   <input
                     type="text"
                     id="nombre-gato"
-                    className="form-control"
+                    className="form-control mt-4"
                     value={inputNombreGato}
                     onChange={(e) => setInputNombreGato(e.target.value)}
                   ></input>
