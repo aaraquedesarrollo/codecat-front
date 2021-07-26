@@ -11,7 +11,7 @@ export const MainCodeCat = () => {
   const [abrirFormaciones, setAbrirFormaciones] = useState(false);
   const [abrirTrabajos, setAbrirTrabajos] = useState(false);
   const [abrirPopUpGato, setAbrirPopUpGato] = useState(false);
-  const { setDatosFormaciones, setListaTrabajos } =
+  const { setDatosFormaciones, setListaTrabajos, setHistorialUsuario } =
     useContext(EjerciciosContext);
 
   const toggleAbrirFormaciones = () => {
@@ -49,6 +49,7 @@ export const MainCodeCat = () => {
       setDatosUsuario({ usuario, siguienteNivel, nivelUsuario });
       setDatosFormaciones(datosCodeCat.listadoFormaciones);
       setListaTrabajos(datosCodeCat.listadoTrabajos);
+      setHistorialUsuario(datosCodeCat.historialUsuario);
     } catch (error) {
       console.log(error);
     }
@@ -56,6 +57,7 @@ export const MainCodeCat = () => {
     desloguearUsuario,
     setDatosFormaciones,
     setDatosUsuario,
+    setHistorialUsuario,
     setListaTrabajos,
     token,
     urlApi,

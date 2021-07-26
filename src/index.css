@@ -305,6 +305,22 @@
   margin: 5px;
 }
 
+.completado {
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  color: rgb(126, 172, 57);
+}
+.completado svg {
+  margin: 5px;
+}
 .icono {
   font-size: 40px;
   color: black;
