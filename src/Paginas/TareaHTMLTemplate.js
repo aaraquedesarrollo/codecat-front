@@ -197,7 +197,7 @@ export const TareaHTMLTemplate = () => {
               <div className="text-center">
                 <a
                   href="/codecat"
-                  className="boton-principal boton-monitor btn btn-info align-self-start"
+                  className="enlace-volver boton-monitor btn btn-info align-self-start"
                 >
                   Volver
                 </a>
