@@ -55,7 +55,7 @@ export const Habitacion = (props) => {
   }, [datosUsuario.length, datosUsuario.usuario?.gato, setAbrirPopUpGato]);
 
   return (
-    <section className="col-9" onClick={cargarInformacionUsuario}>
+    <section className="col-9">
       <div className={`${abrirPopUpGato ? "" : "habitacion "}row h-100`}>
         {abrirFormaciones && (
           <section className="ventana-ejercicios col-12">
