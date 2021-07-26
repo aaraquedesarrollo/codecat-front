@@ -110,7 +110,7 @@ export const TareaHTMLTemplate = () => {
                 type="text"
                 readOnly
                 value={"/" + listaInputs[indiceEtiqueta]}
-                tabindex="-1"
+                tabIndex="-1"
               />
               <span>{" >"}</span>
             </Col>

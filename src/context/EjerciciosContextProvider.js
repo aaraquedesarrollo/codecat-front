@@ -6,20 +6,7 @@ export const EjerciciosContextProvider = (props) => {
 
   const [datosFormaciones, setDatosFormaciones] = useState([]);
   const [listaTrabajos, setListaTrabajos] = useState([]);
-  //no devuleve lo que toca
-  /*  const obtenerTareasCompletadas = async (idTrabajo) => {
-    const response = await fetch(
-      urlApi + "historial/comprobar-tareas/" + idTrabajo,
-      {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      }
-    );
-    const tareasCompletadas = await response.json();
-    return tareasCompletadas;
-  };
- */
+  const [historialUsuario, setHistorialUsuario] = useState([]);
   return (
     <EjerciciosContext.Provider
       value={{
@@ -27,6 +14,8 @@ export const EjerciciosContextProvider = (props) => {
         setDatosFormaciones,
         listaTrabajos,
         setListaTrabajos,
+        historialUsuario,
+        setHistorialUsuario,
       }}
     >
       {children}
