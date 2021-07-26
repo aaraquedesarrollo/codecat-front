@@ -79,8 +79,8 @@ export const Habitacion = (props) => {
           <div className="ventana-ejercicios justify-content-center col-12 position-relative">
             <div className="formulario-nombre-gato row">
               <img
-                src="img\locutormisterioso.png"
-                alt="locutor misterioso sujetando un café"
+                src="img\mariochiquito.png"
+                alt="Locutor misterioso sujetando un café"
                 className="locutor col-5"
               />
               <form
