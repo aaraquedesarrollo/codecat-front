@@ -222,7 +222,26 @@
 
 .boton-menu {
   padding: 20px 0;
-  background-color: #c1712a;
+  background-color: transparent;
+  border: 0;
+  align-self: center;
+  min-height: 70px;
+  min-width: 140px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.boton-formacion {
+  background-image: url(post-lila.png);
+}
+
+.boton-trabajo {
+  background-image: url(post-azul.png);
+}
+
+.boton-tienda {
+  background-image: url(post-naranja.png);
 }
 
 .ventana-ejercicios {

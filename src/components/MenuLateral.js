@@ -55,7 +55,7 @@ export const MenuLateral = (props) => {
                 Experiencia: {datosUsuario.usuario.experiencia}
               </div>
               <ProgressBar
-                className="barra-progreso progress p-0 mb-3"
+                className="barra-progreso progress p-0 mb-1"
                 striped
                 animated
                 variant="info"
@@ -91,7 +91,7 @@ export const MenuLateral = (props) => {
                 }
               />
               <button
-                className="boton-menu btn btn-light mb-3"
+                className="boton-menu boton-formacion btn btn-light mb-3"
                 type="button"
                 onClick={toggleAbrirFormaciones}
                 disabled={abrirPopUpGato}
@@ -99,7 +99,7 @@ export const MenuLateral = (props) => {
                 Formación
               </button>
               <button
-                className="boton-menu btn btn-light mb-3"
+                className="boton-menu boton-trabajo btn btn-light mb-3"
                 type="button"
                 onClick={toggleAbrirTrabajos}
                 disabled={abrirPopUpGato}
@@ -107,7 +107,7 @@ export const MenuLateral = (props) => {
                 Trabajos
               </button>
               <button
-                className="boton-menu btn btn-light mb-3"
+                className="boton-menu boton-tienda btn btn-light mb-3"
                 type="button"
                 disabled
               >
