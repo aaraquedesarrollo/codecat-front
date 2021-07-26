@@ -422,8 +422,10 @@ select {
 }
 
 .nombre-gato {
+  top: 10px;
+  right: -50px;
+  padding: 10px;
   background-color: white;
-  padding: 5px 0;
   border-bottom-left-radius: 0px !important;
   border-radius: 30px;
   border: 1px solid rgb(59, 59, 59);
@@ -466,8 +468,9 @@ select {
 
 .formulario-nombre-gato {
   background-color: #c1712a;
-  padding: 20px;
-  border: 1px solid black;
+  padding-block: 13px;
+  padding-right: 0px;
+  box-shadow: -3px 3px #744900;
   border-radius: 10px;
 }
 

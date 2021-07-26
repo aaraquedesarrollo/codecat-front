@@ -77,8 +77,8 @@ export const Habitacion = (props) => {
         )}
         {abrirPopUpGato && (
           <>
-            <div className="">
-              <div className="col-5 position-relative">
+            <div className="justify-content-center align-items-center row">
+              <div className="col-7 position-relative">
                 <img
                   src="img\locutormisterioso.png"
                   alt="locutor misterioso position-relative sujetando un café"
@@ -91,7 +91,7 @@ export const Habitacion = (props) => {
                   Ponle un nombre a tu compañero felino
                 </div>
               </div>
-              <div className="ventana-ejercicios justify-content-center formulario-nombre-gato col-12">
+              <div className="ventana-ejercicios justify-content-center formulario-nombre-gato col-6">
                 <form noValidate={true} onSubmit={submitNombreGato}>
                   <div className="form-group">
                     <input
