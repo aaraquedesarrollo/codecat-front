@@ -429,6 +429,15 @@ select {
   left: 20px;
   width: 200px;
 }
+.nombre-prof {
+  text-align: center;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  background-color: #dfa25d;
+  font-weight: 700;
+  color: black;
+}
 
 @keyframes puntosVariantes {
   0% {
@@ -466,6 +475,7 @@ select {
   padding-right: 0px;
   box-shadow: -3px 3px #744900;
   border-radius: 10px;
+  border-top-right-radius: 0;
 }
 
 .formulario-nombre-gato button {
