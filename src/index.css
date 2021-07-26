@@ -466,9 +466,18 @@ select {
 
 .formulario-nombre-gato {
   background-color: #c1712a;
-  padding: 20px;
+  padding-block: 10px;
+  padding-right: 0px;
   border: 2px solid black;
   border-radius: 10px;
+}
+
+.formulario-nombre-gato img {
+  padding-left: 0px;
+}
+
+.formulario-nombre-gato form {
+  padding-right: 0px;
 }
 
 .formulario-nombre-gato button {

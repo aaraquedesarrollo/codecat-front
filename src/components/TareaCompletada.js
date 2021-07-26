@@ -5,13 +5,11 @@ export const TareaCompletada = (props) => {
   return (
     <Col xs="12" className="text-center">
       <img
-        src="/img/codecat-imagen.png"
-        alt="Dibujo de un gato en píxel art"
-        width="172"
-        height="212"
+        src="/img/mariochiquito.png"
+        alt="Mario felicitandote por haber completado la tarea"
       />
       <div>
-        <p>¡Tarea completada!</p>
+        <p className="mt-2">¡Esta flama!</p>
       </div>
       <div>
         <p>{`Has ganado ${ejercicioActual.tareas[indiceTarea].recompensa.chuches} chuches y ${ejercicioActual.tareas[indiceTarea].recompensa.experiencia} puntos de experiencia`}</p>
