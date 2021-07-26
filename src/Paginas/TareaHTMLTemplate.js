@@ -41,9 +41,9 @@ export const TareaHTMLTemplate = () => {
 
   const paginaAnterior = () => {
     history.push(
-      `/codecat/ejercicios/${ejercicioActual.tipo}/${idTrabajo}/${
-        +indiceTarea - 1
-      }`
+      `/codecat/ejercicios/${
+        ejercicioActual.tareas[+indiceTarea - 1].tipo
+      }/${idTrabajo}/${+indiceTarea - 1}`
     );
     setError(false);
     setAcierto(false);
@@ -51,9 +51,9 @@ export const TareaHTMLTemplate = () => {
 
   const paginaSiguiente = () => {
     history.push(
-      `/codecat/ejercicios/${ejercicioActual.tipo}/${idTrabajo}/${
-        +indiceTarea + 1
-      }`
+      `/codecat/ejercicios/${
+        ejercicioActual.tareas[+indiceTarea + 1].tipo
+      }/${idTrabajo}/${+indiceTarea + 1}`
     );
     setError(false);
     setAcierto(false);
