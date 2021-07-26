@@ -11,9 +11,8 @@ import { PaginaPrincipal } from "./Paginas/PaginaPrincipal";
 import { Loading } from "./components/Loading";
 import { GeneralContextProvider } from "./context/GeneralContextProvider";
 import { EjerciciosContextProvider } from "./context/EjerciciosContextProvider";
-import { TareaHTMLTemplate } from "./Paginas/TareaHTMLTemplate";
 import { LoguedProtecion } from "./components/LoguedProtection";
-import { TareaTestTemplate } from "./Paginas/TareaTestTemplate";
+import { TareaTemplate } from "./Paginas/TareaTemplate";
 
 function App() {
   return (
@@ -35,14 +34,8 @@ function App() {
                 <Route path="/" exact>
                   <Redirect to="/principal" />
                 </Route>
-                <Route
-                  path="/codecat/ejercicios/html/:idTrabajo/:indiceTarea"
-                  exact
-                >
-                  <TareaHTMLTemplate />
-                </Route>
-                <Route path="/codecat/ejercicios/test/:idTrabajo/:indiceTarea">
-                  <TareaTestTemplate />
+                <Route path="/codecat/ejercicios/:idTrabajo/:indiceTarea" exact>
+                  <TareaTemplate />
                 </Route>
                 <Route path="**" exact>
                   <PaginaNotFound />
