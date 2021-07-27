@@ -421,19 +421,24 @@ select {
   justify-content: center;
 }
 
-.nombre-gato {
-  background-color: white;
-  padding: 5px 0;
-  border-bottom-left-radius: 0px !important;
-  border-radius: 30px;
-  border: 3px solid rgb(59, 59, 59);
-}
 /* locutor */
 .locutor {
   left: 20px;
   width: 200px;
 }
 
+.nombre-gato {
+  font-size: 25px;
+  font-weight: 700;
+}
+.nombre-prof {
+  text-align: center;
+  padding: 10px;
+  background-image: url(fondo-menu.png);
+  background-position: left;
+  font-weight: 700;
+  color: black;
+}
 @keyframes puntosVariantes {
   0% {
     background-color: var(--azul);
@@ -466,10 +471,11 @@ select {
 
 .formulario-nombre-gato {
   background-color: #c1712a;
-  padding-block: 10px;
+  padding-block: 13px;
   padding-right: 0px;
-  border: 2px solid black;
+  box-shadow: -3px 3px #744900;
   border-radius: 10px;
+  border-top-right-radius: 0;
 }
 
 .formulario-nombre-gato img {
