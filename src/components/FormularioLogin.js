@@ -61,6 +61,7 @@ export const FormularioLogin = (props) => {
             type="text"
             placeholder="Nombre de Usuario o Email"
             onChange={agregarDatos}
+            autoComplete="off"
           />
         </div>
         <div className="form-group">
@@ -71,6 +72,7 @@ export const FormularioLogin = (props) => {
             type="password"
             placeholder="Contraseña"
             onChange={agregarDatos}
+            autoComplete="off"
           />
         </div>
         <div className="d-flex justify-content-around">

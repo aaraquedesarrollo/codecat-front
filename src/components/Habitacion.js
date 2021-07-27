@@ -89,7 +89,11 @@ export const Habitacion = (props) => {
                 Prof. Flama
               </div>
               <div className="ventana-ejercicios justify-content-center formulario-nombre-gato col-12">
-                <form noValidate={true} onSubmit={submitNombreGato}>
+                <form
+                  noValidate={true}
+                  onSubmit={submitNombreGato}
+                  autoComplete="off"
+                >
                   <div
                     htmlFor="nombre-gato"
                     className="nombre-gato text-center  align-self-start"
