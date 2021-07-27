@@ -5,8 +5,9 @@ export const TareaCompletada = (props) => {
   return (
     <Col xs="12" className="text-center">
       <img
-        src="/img/mariochiquito.png"
+        src="/img/locutormisterioso.png"
         alt="Mario felicitandote por haber completado la tarea"
+        className="mario-ejercicio"
       />
       <div>
         <p className="mt-2">¡Está flama!</p>

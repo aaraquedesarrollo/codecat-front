@@ -551,6 +551,9 @@ select {
 .tipo-test .espaciado {
   color: #3c3836;
 }
+.mario-ejercicio {
+  width: 200px;
+}
 
 @media (min-width: 992px) {
   .codecat-principal {
