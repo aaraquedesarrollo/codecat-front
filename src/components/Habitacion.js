@@ -55,8 +55,8 @@ export const Habitacion = (props) => {
   }, [datosUsuario.length, datosUsuario.usuario?.gato, setAbrirPopUpGato]);
 
   return (
-    <section className="col-9">
-      <div className={`${abrirPopUpGato ? "" : "habitacion "}row h-100`}>
+    <section className="col-8">
+      <div className={`${abrirPopUpGato ? "" : "habitacion "} h-100`}>
         {abrirFormaciones && (
           <section className="ventana-ejercicios col-12">
             <ul className="listado-ejercicios list-unstyled row">
@@ -76,44 +76,47 @@ export const Habitacion = (props) => {
           </section>
         )}
         {abrirPopUpGato && (
-          <div className="ventana-ejercicios justify-content-center col-12 position-relative">
-            <div className="formulario-nombre-gato row">
-              <img
-                src="img\mariochiquito.png"
-                alt="Locutor misterioso sujetando un café"
-                className="locutor col-5"
-              />
-              <form
-                noValidate={true}
-                onSubmit={submitNombreGato}
-                className="col-6"
-              >
-                <div className="form-group">
-                  <label
+          <>
+            <div className="justify-content-between row">
+              <div className="col-7 position-relative">
+                <img
+                  src="img\locutormisterioso.png"
+                  alt="locutor misterioso position-relative sujetando un café"
+                  className="locutor"
+                />
+              </div>
+              <div className="col-3 position-relative align-self-end text-center nombre-prof">
+                Prof. Flama
+              </div>
+              <div className="ventana-ejercicios justify-content-center formulario-nombre-gato col-12">
+                <form noValidate={true} onSubmit={submitNombreGato}>
+                  <div
                     htmlFor="nombre-gato"
-                    className="nombre-gato text-center"
+                    className="nombre-gato text-center  align-self-start"
                   >
-                    Ponle un nombre a tu compañero felino
-                  </label>
-                  <input
-                    type="text"
-                    id="nombre-gato"
-                    className="form-control mt-4"
-                    value={inputNombreGato}
-                    onChange={(e) => setInputNombreGato(e.target.value)}
-                  ></input>
-                </div>
-                <div className="text-center">
-                  <button type="submit" className="btn">
-                    ¡Empezar aventura!
-                  </button>
-                  {error !== "" && (
-                    <span className="d-block mt-2">{error}</span>
-                  )}
-                </div>
-              </form>
+                    Ei! Primero ponle un nombre a tu compañero felino!
+                  </div>
+                  <div className="form-group d-flex justify-content-center">
+                    <input
+                      type="text"
+                      id="nombre-gato"
+                      className="form-control mt-4 w-50"
+                      value={inputNombreGato}
+                      onChange={(e) => setInputNombreGato(e.target.value)}
+                    ></input>
+                  </div>
+                  <div className="text-center">
+                    <button type="submit" className="btn">
+                      ¡Empezar aventura!
+                    </button>
+                    {error !== "" && (
+                      <span className="d-block mt-2">{error}</span>
+                    )}
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </section>
