@@ -77,7 +77,7 @@ export const Habitacion = (props) => {
         )}
         {abrirPopUpGato && (
           <>
-            <div className="justify-content-between row">
+            <div className="justify-content-between row p-5">
               <div className="col-7 position-relative">
                 <img
                   src="img\locutormisterioso.png"
